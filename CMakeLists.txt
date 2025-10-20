@@ -20,7 +20,7 @@ BitbotAddDependency(
 include(FetchContent)
 FetchContent_Declare(
   ovinf
-  GIT_REPOSITORY git@github.com:Dknt0/ovinf.git 
+  GIT_REPOSITORY https://github.com/Dknt0/ovinf.git
   GIT_TAG main
 )
 FetchContent_MakeAvailable(ovinf)

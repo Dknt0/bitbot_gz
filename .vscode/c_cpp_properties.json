@@ -1,0 +1,28 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/lichao/sim_robot/install/kindr_ros/include/**",
+        "/home/lichao/sim_robot/install/kindr/include/**",
+        "/home/lichao/sim_robot/install/bitbot_gz/include/**",
+        "/opt/ros/jazzy/include/**",
+        "/home/lichao/sim_robot/src/bitbot_gz/include/**",
+        "/home/lichao/sim_robot/src/elevation_mapping/include/**",
+        "/home/lichao/sim_robot/src/kindr/include/**",
+        "/home/lichao/sim_robot/src/kindr_ros/kindr_ros/include/**",
+        "include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}
