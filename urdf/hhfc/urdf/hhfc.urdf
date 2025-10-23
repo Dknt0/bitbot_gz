@@ -1016,7 +1016,7 @@
         <image>
           <width>640</width>
           <height>480</height>
-          <format>R8G8B8</format> <!-- R8G8B8 保证能直接输出点云， RGB_INT8 没有点云只有深度-->
+          <format>RGB_INT8</format> <!-- R8G8B8 保证能直接输出点云， RGB_INT8 没有点云只有深度-->
           <anti_aliasing>4</anti_aliasing>
         </image>
         <clip>
@@ -1057,7 +1057,7 @@
                 <max_angle>1.396263</max_angle>
             </horizontal>
             <vertical>
-                <samples>64</samples>
+                <samples>16</samples>
                 <resolution>1</resolution>
                 <min_angle>-0.5</min_angle>
                 <max_angle>0.5</max_angle>
@@ -1065,7 +1065,7 @@
         </scan>
         <range>
             <min>0.08</min>
-            <max>10.0</max>
+            <max>80.0</max>
             <resolution>0.01</resolution>
         </range>
     </ray>

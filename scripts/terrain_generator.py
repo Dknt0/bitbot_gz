@@ -5,7 +5,7 @@
 import xml.etree.ElementTree as xml_et
 import numpy as np
 
-ROOT_PATH = "/home/dknt/Project/bitbot_gz_ws/src/bitbot_gz/world/"
+ROOT_PATH = "/home/lichao/sim_robot/src/bitbot_gz/world/"
 INPUT_SCENE_PATH = ROOT_PATH + "empty.sdf"
 OUTPUT_SCENE_PATH = ROOT_PATH + "terrain.sdf"
 
@@ -288,5 +288,8 @@ if __name__ == "__main__":
 
     Gap(tg)
     Stairs(tg)
+
+    tg.AddBox(position=[20.0, 0.0, 0.0], euler=[0.0, 0.0, 0.0], size=[1.0, 20.0, 5]);
+    tg.AddBox(position=[0.0, -10.0, 0.0], euler=[0.0, 0.0, 0.0], size=[20.0, 1.0, 5]);
 
     tg.Save()
