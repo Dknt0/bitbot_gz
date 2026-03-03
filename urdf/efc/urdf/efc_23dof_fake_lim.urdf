@@ -23,7 +23,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://bitbot_gz/urdf/efc/meshes/base_link.STL" />
+          filename="../meshes/base_link.STL" />
       </geometry>
       <material
         name="">
@@ -56,7 +56,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://bitbot_gz/urdf/efc/meshes/left_hip_pitch.STL" />
+          filename="../meshes/left_hip_pitch.STL" />
       </geometry>
       <material
         name="">
@@ -105,7 +105,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://bitbot_gz/urdf/efc/meshes/left_hip_roll.STL" />
+          filename="../meshes/left_hip_roll.STL" />
       </geometry>
       <material
         name="">
@@ -164,7 +164,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://bitbot_gz/urdf/efc/meshes/left_hip_yaw.STL" />
+          filename="../meshes/left_hip_yaw.STL" />
       </geometry>
       <material
         name="">
@@ -224,7 +224,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://bitbot_gz/urdf/efc/meshes/left_knee.STL" />
+          filename="../meshes/left_knee.STL" />
       </geometry>
       <material
         name="">
@@ -285,7 +285,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://bitbot_gz/urdf/efc/meshes/left_ankle_pitch.STL" />
+          filename="../meshes/left_ankle_pitch.STL" />
       </geometry>
       <material
         name="">
@@ -325,12 +325,12 @@
       <mass
         value="0.528201582069976" />
       <inertia
-        ixx="0.0124795"
+        ixx="0.0024795"
         ixy="0.0000005"
         ixz="-0.0000005"
-        iyy="0.0127176"
+        iyy="0.0027176"
         iyz="0.0000473"
-        izz="0.0013875" />
+        izz="0.0003875" />
     </inertial>
     <visual>
       <origin
@@ -338,7 +338,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://bitbot_gz/urdf/efc/meshes/left_ankle_roll.STL" />
+          filename="../meshes/left_ankle_roll.STL" />
       </geometry>
       <material
         name="">
@@ -407,7 +407,6 @@
       upper="0.34"
       effort="75"
       velocity="30" />
-    <dynamics damping="0.01" friction="0.01" />
   </joint>
 
   <!-- Right leg -->
@@ -433,7 +432,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://bitbot_gz/urdf/efc/meshes/right_hip_pitch.STL" />
+          filename="../meshes/right_hip_pitch.STL" />
       </geometry>
       <material
         name="">
@@ -482,7 +481,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://bitbot_gz/urdf/efc/meshes/right_hip_roll.STL" />
+          filename="../meshes/right_hip_roll.STL" />
       </geometry>
       <material
         name="">
@@ -541,7 +540,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://bitbot_gz/urdf/efc/meshes/right_hip_yaw.STL" />
+          filename="../meshes/right_hip_yaw.STL" />
       </geometry>
       <material
         name="">
@@ -601,7 +600,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://bitbot_gz/urdf/efc/meshes/right_knee.STL" />
+          filename="../meshes/right_knee.STL" />
       </geometry>
       <material
         name="">
@@ -662,7 +661,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://bitbot_gz/urdf/efc/meshes/right_ankle_pitch.STL" />
+          filename="../meshes/right_ankle_pitch.STL" />
       </geometry>
       <material
         name="">
@@ -702,12 +701,12 @@
       <mass
         value="0.528201582069976" />
       <inertia
-        ixx="0.0124795"
+        ixx="0.0024795"
         ixy="0.0000005"
         ixz="-0.0000005"
-        iyy="0.0127176"
+        iyy="0.0027176"
         iyz="0.0000473"
-        izz="0.0013875" />
+        izz="0.0003875" />
     </inertial>
     <visual>
       <origin
@@ -715,7 +714,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://bitbot_gz/urdf/efc/meshes/right_ankle_roll.STL" />
+          filename="../meshes/right_ankle_roll.STL" />
       </geometry>
       <material
         name="">
@@ -784,7 +783,6 @@
       upper="0.34"
       effort="75"
       velocity="30" />
-    <dynamics damping="0.11" friction="0.11" />
   </joint>
 
   <!-- Upper body -->
@@ -811,7 +809,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://bitbot_gz/urdf/efc/meshes/upper_body.STL" />
+          filename="../meshes/upper_body.STL" />
       </geometry>
       <material
         name="">
@@ -845,30 +843,6 @@
       velocity="30" />
   </joint>
 
-  <link name="camera_link">
-    <inertial>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <mass value="0.1"/>
-      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <box size="0.1 0.02 0.02"/>
-      </geometry>
-      <material name="">
-        <color rgba="0.0 0.0 1.0 0.7" />
-      </material>
-    </visual>
-  </link>
-  <joint name="camera_joint" type="fixed">
-    <origin xyz="0.1 0.0 0.0" rpy="-2.181661564992912 0.0 -1.57079632679489661923" />
-    <parent link="waist_link" />
-    <child link="camera_link" />
-    <axis xyz="0 1 0" />
-    <limit effort="100.0" velocity="100.0" lower="-3.14" upper="3.14"/>
-  </joint>
-
   <!-- Left arm -->
   <link
     name="left_shoulder_pitch_link">
@@ -892,7 +866,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://bitbot_gz/urdf/efc/meshes/left_shoulder_pitch.STL" />
+          filename="../meshes/left_shoulder_pitch.STL" />
       </geometry>
       <material
         name="">
@@ -928,12 +902,12 @@
       <mass
         value="0.74618333831235" />
       <inertia
-        ixx="0.0005761"
-        ixy="0.0000185"
-        ixz="-0.0000038"
-        iyy="0.0006071"
-        iyz="-0.0000024"
-        izz="0.0005178" />
+        ixx="0.0014406"
+        ixy="0.0000034"
+        ixz="-0.0000011"
+        iyy="0.0017306"
+        iyz="-0.0000010"
+        izz="0.0002067" />
     </inertial>
     <visual>
       <origin
@@ -941,7 +915,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://bitbot_gz/urdf/efc/meshes/left_shoulder_roll.STL" />
+          filename="../meshes/left_shoulder_roll.STL" />
       </geometry>
       <material
         name="">
@@ -990,7 +964,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://bitbot_gz/urdf/efc/meshes/left_shoulder_yaw.STL" />
+          filename="../meshes/left_shoulder_yaw.STL" />
       </geometry>
       <material
         name="">
@@ -1049,7 +1023,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://bitbot_gz/urdf/efc/meshes/left_elbow_pitch.STL" />
+          filename="../meshes/left_elbow_pitch.STL" />
       </geometry>
       <material
         name="">
@@ -1108,7 +1082,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://bitbot_gz/urdf/efc/meshes/left_elbow_yaw.STL" />
+          filename="../meshes/left_elbow_yaw.STL" />
       </geometry>
       <material
         name="">
@@ -1159,7 +1133,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://bitbot_gz/urdf/efc/meshes/right_shoulder_pitch.STL" />
+          filename="../meshes/right_shoulder_pitch.STL" />
       </geometry>
       <material
         name="">
@@ -1196,12 +1170,12 @@
       <mass
         value="0.740046506400838" />
       <inertia
-        ixx="0.0005761"
-        ixy="0.0000185"
-        ixz="-0.0000038"
-        iyy="0.0006071"
-        iyz="-0.0000024"
-        izz="0.0005178" />
+        ixx="0.0014406"
+        ixy="0.0000034"
+        ixz="-0.0000011"
+        iyy="0.0017306"
+        iyz="-0.0000010"
+        izz="0.0002067" />
     </inertial>
     <visual>
       <origin
@@ -1209,7 +1183,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://bitbot_gz/urdf/efc/meshes/right_shoulder_roll.STL" />
+          filename="../meshes/right_shoulder_roll.STL" />
       </geometry>
       <material
         name="">
@@ -1261,7 +1235,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://bitbot_gz/urdf/efc/meshes/right_shoulder_yaw.STL" />
+          filename="../meshes/right_shoulder_yaw.STL" />
       </geometry>
       <material
         name="">
@@ -1320,7 +1294,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://bitbot_gz/urdf/efc/meshes/right_elbow_pitch.STL" />
+          filename="../meshes/right_elbow_pitch.STL" />
       </geometry>
       <material
         name="">
@@ -1382,7 +1356,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://bitbot_gz/urdf/efc/meshes/right_elbow_yaw.STL" />
+          filename="../meshes/right_elbow_yaw.STL" />
       </geometry>
       <material
         name="">
@@ -1436,7 +1410,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://bitbot_gz/urdf/efc/meshes/head.STL" />
+          filename="../meshes/head.STL" />
       </geometry>
       <material
         name="">
@@ -1447,7 +1421,7 @@
   </link>
   <joint
     name="head_joint"
-    type="revolute">
+    type="fixed">
     <origin
       xyz="0 0 0.3401"
       rpy="0 0 0" />
@@ -1464,391 +1438,7 @@
       velocity="30" />
   </joint>
 
-  <!-- ros_control -->
-  <ros2_control name="GazeboSimSystem" type="system">
-    <hardware>
-      <plugin>gz_ros2_control/GazeboSimSystem</plugin>
-    </hardware>
-    <joint name="left_hip_pitch_joint">
-      <command_interface name="effort">
-        <param name="min">-130</param>
-        <param name="max">130</param>
-      </command_interface>
-      <state_interface name="position">
-        <param name="initial_value">0.3</param>
-      </state_interface>
-      <state_interface name="velocity"/>
-      <state_interface name="effort"/>
-    </joint>
-    <joint name="left_hip_roll_joint">
-      <command_interface name="effort">
-        <param name="min">-130</param>
-        <param name="max">130</param>
-      </command_interface>
-      <state_interface name="position">
-        <param name="initial_value">0.0</param>
-      </state_interface>
-      <state_interface name="velocity"/>
-      <state_interface name="effort"/>
-    </joint>
-    <joint name="left_hip_yaw_joint">
-      <command_interface name="effort">
-        <param name="min">-130</param>
-        <param name="max">130</param>
-      </command_interface>
-      <state_interface name="position">
-        <param name="initial_value">0.0</param>
-      </state_interface>
-      <state_interface name="velocity"/>
-      <state_interface name="effort"/>
-    </joint>
-    <joint name="left_knee_joint">
-      <command_interface name="effort">
-        <param name="min">-130</param>
-        <param name="max">130</param>
-      </command_interface>
-      <state_interface name="position">
-        <param name="initial_value">-0.6</param>
-      </state_interface>
-      <state_interface name="velocity"/>
-      <state_interface name="effort"/>
-    </joint>
-    <joint name="left_ankle_pitch_joint">
-      <command_interface name="effort">
-        <param name="min">-130</param>
-        <param name="max">130</param>
-      </command_interface>
-      <state_interface name="position">
-        <param name="initial_value">-0.3</param>
-      </state_interface>
-      <state_interface name="velocity"/>
-      <state_interface name="effort"/>
-    </joint>
-    <joint name="left_ankle_roll_joint">
-      <command_interface name="effort">
-        <param name="min">-75</param>
-        <param name="max">75</param>
-      </command_interface>
-      <state_interface name="position">
-        <param name="initial_value">0.0</param>
-      </state_interface>
-      <state_interface name="velocity"/>
-      <state_interface name="effort"/>
-    </joint>
-    <joint name="right_hip_pitch_joint">
-      <command_interface name="effort">
-        <param name="min">-75</param>
-        <param name="max">75</param>
-      </command_interface>
-      <state_interface name="position">
-        <param name="initial_value">0.3</param>
-      </state_interface>
-      <state_interface name="velocity"/>
-      <state_interface name="effort"/>
-    </joint>
-    <joint name="right_hip_roll_joint">
-      <command_interface name="effort">
-        <param name="min">-130</param>
-        <param name="max">130</param>
-      </command_interface>
-      <state_interface name="position">
-        <param name="initial_value">0.0</param>
-      </state_interface>
-      <state_interface name="velocity"/>
-      <state_interface name="effort"/>
-    </joint>
-    <joint name="right_hip_yaw_joint">
-      <command_interface name="effort">
-        <param name="min">-130</param>
-        <param name="max">130</param>
-      </command_interface>
-      <state_interface name="position">
-        <param name="initial_value">0.0</param>
-      </state_interface>
-      <state_interface name="velocity"/>
-      <state_interface name="effort"/>
-    </joint>
-    <joint name="right_knee_joint">
-      <command_interface name="effort">
-        <param name="min">-130</param>
-        <param name="max">130</param>
-      </command_interface>
-      <state_interface name="position">
-        <param name="initial_value">-0.6</param>
-      </state_interface>
-      <state_interface name="velocity"/>
-      <state_interface name="effort"/>
-    </joint>
-    <joint name="right_ankle_pitch_joint">
-      <command_interface name="effort">
-        <param name="min">-75</param>
-        <param name="max">75</param>
-      </command_interface>
-      <state_interface name="position">
-        <param name="initial_value">-0.3</param>
-      </state_interface>
-      <state_interface name="velocity"/>
-      <state_interface name="effort"/>
-    </joint>
-    <joint name="right_ankle_roll_joint">
-      <command_interface name="effort">
-        <param name="min">-75</param>
-        <param name="max">75</param>
-      </command_interface>
-      <state_interface name="position">
-        <param name="initial_value">0.0</param>
-      </state_interface>
-      <state_interface name="velocity"/>
-      <state_interface name="effort"/>
-    </joint>
-    <joint name="waist_joint">
-      <command_interface name="effort">
-        <param name="min">-130</param>
-        <param name="max">130</param>
-      </command_interface>
-      <state_interface name="position">
-        <param name="initial_value">0.0</param>
-      </state_interface>
-      <state_interface name="velocity"/>
-      <state_interface name="effort"/>
-    </joint>
-    <joint name="left_shoulder_pitch_joint">
-      <command_interface name="effort">
-        <param name="min">-75</param>
-        <param name="max">75</param>
-      </command_interface>
-      <state_interface name="position">
-        <param name="initial_value">0.0</param>
-      </state_interface>
-      <state_interface name="velocity"/>
-      <state_interface name="effort"/>
-    </joint>
-    <joint name="left_shoulder_roll_joint">
-      <command_interface name="effort">
-        <param name="min">-75</param>
-        <param name="max">75</param>
-      </command_interface>
-      <state_interface name="position">
-        <param name="initial_value">0.0</param>
-      </state_interface>
-      <state_interface name="velocity"/>
-      <state_interface name="effort"/>
-    </joint>
-    <joint name="left_shoulder_yaw_joint">
-      <command_interface name="effort">
-        <param name="min">-75</param>
-        <param name="max">75</param>
-      </command_interface>
-      <state_interface name="position">
-        <param name="initial_value">0.0</param>
-      </state_interface>
-      <state_interface name="velocity"/>
-      <state_interface name="effort"/>
-    </joint>
-    <joint name="left_elbow_pitch_joint">
-      <command_interface name="effort">
-        <param name="min">-75</param>
-        <param name="max">75</param>
-      </command_interface>
-      <state_interface name="position">
-        <param name="initial_value">0.0</param>
-      </state_interface>
-      <state_interface name="velocity"/>
-      <state_interface name="effort"/>
-    </joint>
-    <joint name="left_elbow_yaw_joint">
-      <command_interface name="effort">
-        <param name="min">-75</param>
-        <param name="max">75</param>
-      </command_interface>
-      <state_interface name="position">
-        <param name="initial_value">0.0</param>
-      </state_interface>
-      <state_interface name="velocity"/>
-      <state_interface name="effort"/>
-    </joint>
-    <joint name="right_shoulder_pitch_joint">
-      <command_interface name="effort">
-        <param name="min">-75</param>
-        <param name="max">75</param>
-      </command_interface>
-      <state_interface name="position">
-        <param name="initial_value">0.0</param>
-      </state_interface>
-      <state_interface name="velocity"/>
-      <state_interface name="effort"/>
-    </joint>
-    <joint name="right_shoulder_roll_joint">
-      <command_interface name="effort">
-        <param name="min">-75</param>
-        <param name="max">75</param>
-      </command_interface>
-      <state_interface name="position">
-        <param name="initial_value">0.0</param>
-      </state_interface>
-      <state_interface name="velocity"/>
-      <state_interface name="effort"/>
-    </joint>
-    <joint name="right_shoulder_yaw_joint">
-      <command_interface name="effort">
-        <param name="min">-75</param>
-        <param name="max">75</param>
-      </command_interface>
-      <state_interface name="position">
-        <param name="initial_value">0.0</param>
-      </state_interface>
-      <state_interface name="velocity"/>
-      <state_interface name="effort"/>
-    </joint>
-    <joint name="right_elbow_pitch_joint">
-      <command_interface name="effort">
-        <param name="min">-75</param>
-        <param name="max">75</param>
-      </command_interface>
-      <state_interface name="position">
-        <param name="initial_value">0.0</param>
-      </state_interface>
-      <state_interface name="velocity"/>
-      <state_interface name="effort"/>
-    </joint>
-    <joint name="right_elbow_yaw_joint">
-      <command_interface name="effort">
-        <param name="min">-75</param>
-        <param name="max">75</param>
-      </command_interface>
-      <state_interface name="position">
-        <param name="initial_value">0.0</param>
-      </state_interface>
-      <state_interface name="velocity"/>
-      <state_interface name="effort"/>
-    </joint>
-    <joint name="head_joint">
-      <command_interface name="effort">
-        <param name="min">-75</param>
-        <param name="max">75</param>
-      </command_interface>
-      <state_interface name="position">
-        <param name="initial_value">0.0</param>
-      </state_interface>
-      <state_interface name="velocity"/>
-      <state_interface name="effort"/>
-    </joint>
-  </ros2_control>
-
-  <!-- gz_control plugin -->
-  <gazebo>
-    <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
-      <parameters>$(find bitbot_gz)/config/efc_gz_controllers.yaml</parameters>
-    </plugin>
-  </gazebo>
-
-  <!--IMU plugin-->
-  <gazebo reference="base_link">
-    <sensor name="imu_sensor" type="imu">
-      <always_on>true</always_on>
-      <update_rate>200</update_rate>
-      <visualize>true</visualize>
-      <topic>imu_data</topic>
-      <plugin filename="gz-sim-imu-system" name="gz::sim::systems::Imu"/>
-    </sensor>
-  </gazebo>
-
-  <!-- RGBD camera plugin -->
-  <gazebo reference="camera_link">
-    <sensor name='depth_camera_sensor' type='depth_camera'>
-      <pose>0 0 0 1.57079632679489661923 -1.57079632679489661923 0</pose>
-      <topic>/depth_camera/image_raw</topic>
-      <camera_info_topic>/depth_camera/camera_info</camera_info_topic>
-      <update_rate>60</update_rate>
-      <camera name='depth_camera'>
-        <pose>0 0 0 0 0 0</pose>
-        <horizontal_fov>1.047</horizontal_fov>
-        <image>
-          <width>640</width>
-          <height>480</height>
-          <format>R_FLOAT32</format>
-          <!-- <format>L_INT16</format> -->
-          <anti_aliasing>4</anti_aliasing>
-        </image>
-        <clip>
-          <near>0.5</near>
-          <far>10</far>
-        </clip>
-        <noise>
-          <type>none</type>
-          <mean>0</mean>
-          <stddev>0</stddev>
-        </noise>
-        <distortion>
-          <k1>0</k1>
-          <k2>0</k2>
-          <k3>0</k3>
-          <p1>0</p1>
-          <p2>0</p2>
-          <center>0.5 0.5</center>
-        </distortion>
-        <lens>
-          <type>pinhole</type>
-        </lens>
-      </camera>
-    </sensor>
-    <sensor name='color_camera_sensor' type='camera'>
-      <pose>0 0 0 1.57079632679489661923 -1.57079632679489661923 0</pose>
-      <topic>/color_camera/image_raw</topic>
-      <camera_info_topic>/color_camera/camera_info</camera_info_topic>
-      <update_rate>20</update_rate>
-      <camera name='color_camera'>
-        <pose>0 0 0 0 0 0</pose>
-        <horizontal_fov>1.047</horizontal_fov>
-        <image>
-          <width>640</width>
-          <height>480</height>
-          <format>R8G8B8</format>
-          <anti_aliasing>4</anti_aliasing>
-        </image>
-        <clip>
-          <near>0.10000000000000001</near>
-          <far>100</far>
-        </clip>
-        <noise>
-          <type>none</type>
-          <mean>0</mean>
-          <stddev>0</stddev>
-        </noise>
-        <distortion>
-          <k1>0</k1>
-          <k2>0</k2>
-          <k3>0</k3>
-          <p1>0</p1>
-          <p2>0</p2>
-          <center>0.5 0.5</center>
-        </distortion>
-        <lens>
-          <type>pinhole</type>
-        </lens>
-      </camera>
-    </sensor>
-  </gazebo>
-
-  <!-- Customized plugin -->
-  <gazebo>
-    <plugin filename="RobotResetPlugin" name="gz::sim::systems::RobotResetPlugin">
-      <robot_name>efc</robot_name>
-      <reset_height>0.95</reset_height>
-    </plugin>
-  </gazebo>
-
-  <gazebo>
-    <plugin filename="PosePublisherPlugin" name="gz::sim::systems::PosePublisherPlugin">
-      <model_name>efc</model_name>
-      <link_name>base_link</link_name>
-    </plugin>
-  </gazebo>
-
-  <!-- Sensor system -->
-  <gazebo>
-    <plugin filename="libignition-gazebo-sensors-system.so" name="ignition::gazebo::systems::Sensors">
-      <render_engine>ogre2</render_engine>
-    </plugin>
-  </gazebo>
 </robot>
+
+
+

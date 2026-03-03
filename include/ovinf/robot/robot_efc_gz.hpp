@@ -16,9 +16,9 @@
 #include <thread>
 #include <vector>
 
+#include "efc_gz_common.h"
 #include "filter/filter_factory.hpp"
 #include "robot/base/robot_base.hpp"
-#include "robot/hhfc_gz/hhfc_gz_common.h"
 #include "utils/csv_logger.hpp"
 
 namespace ovinf {

@@ -57,6 +57,6 @@
     <device id="23" type="GzJoint" name="head_joint"
             mode="torque" p_gain='30' d_gain='1' i_gain='0'/>
 
-    <device id="3" type="GzImu" name="imu"/>
+    <device id="24" type="GzImu" name="imu"/>
   </bus>
 </bitbot>

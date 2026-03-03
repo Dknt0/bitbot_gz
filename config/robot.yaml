@@ -275,7 +275,7 @@ RobotConfig:
 
   policy_standing:
     controller_type: "AUTO"
-    num_delay: 20
+    num_delay: 0
     p_gains: *default_p_gains
     d_gains: *default_d_gains
     default_position: *defult_init_pos
@@ -342,7 +342,7 @@ RobotConfig:
 
   policy_walking:
     controller_type: "AUTO"
-    num_delay: 20
+    num_delay: 0
     p_gains:
       l_hip_p: 150
       l_hip_r: 150
@@ -477,7 +477,7 @@ RobotConfig:
 
   policy_robust:
     controller_type: "AUTO"
-    num_delay: 20
+    num_delay: 0
     p_gains:
       l_hip_p: 150
       l_hip_r: 150
