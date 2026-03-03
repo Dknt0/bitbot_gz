@@ -64,6 +64,7 @@ def generate_launch_description():
         arguments=[
             "/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock",
             "/imu_data@sensor_msgs/msg/Imu[gz.msgs.IMU",
+            "/imu_lidar@sensor_msgs/msg/Imu[gz.msgs.IMU",
             "/depth_camera/image_raw@sensor_msgs/msg/Image@gz.msgs.Image",
             "/color_camera/image_raw@sensor_msgs/msg/Image@gz.msgs.Image",
             "/depth_camera/camera_info@sensor_msgs/msg/CameraInfo[gz.msgs.CameraInfo",
