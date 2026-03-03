@@ -9,11 +9,11 @@
 #include <ctime>
 #include <memory>
 
-#include "controller/init_pos.hpp"
-#include "controller/policy_controller.hpp"
-#include "robot/hhfc_gz/hhfc_gz_common.h"
-#include "robot/hhfc_gz/robot_hhfc_gz.hpp"
-using RobotT = ovinf::RobotHhfcGz;
+#include "ovinf/controller/init_pos.hpp"
+#include "ovinf/controller/policy_controller.hpp"
+#include "ovinf/robot/efc_gz_common.h"
+#include "ovinf/robot/robot_efc_gz.hpp"
+using RobotT = ovinf::RobotEfcGz;
 
 enum Events {
   InitPose = 1001,
