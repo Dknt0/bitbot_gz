@@ -10,12 +10,12 @@
       <mass
         value="3.47645" />
       <inertia
-        ixx="0.0055134"
+        ixx="0.0155134"
         ixy="1.2232E-07"
         ixz="-2.9091E-06"
-        iyy="0.0062779"
+        iyy="0.0162779"
         iyz="1.3398E-06"
-        izz="0.0056981" />
+        izz="0.0156981" />
     </inertial>
     <visual>
       <origin
@@ -43,12 +43,12 @@
       <mass
         value="0.7656491" />
       <inertia
-        ixx="0.0022635"
+        ixx="0.0122635"
         ixy="0.0000152"
         ixz="-0.0000264"
-        iyy="0.0022500"
+        iyy="0.0122500"
         iyz="0.0004700"
-        izz="0.0022880" />
+        izz="0.0122880" />
     </inertial>
     <visual>
       <origin
@@ -82,6 +82,7 @@
       upper="1.57"
       effort="130"
       velocity="30" />
+    <dynamics damping="0.1" friction="0.1" />
   </joint>
   <link
     name="left_hip_roll_link">
@@ -92,12 +93,12 @@
       <mass
         value="2.1934957" />
       <inertia
-        ixx="0.0087202"
+        ixx="0.0187202"
         ixy="0.0000030"
         ixz="-0.0000195"
-        iyy="0.0080842"
+        iyy="0.0180842"
         iyz="0.0006387"
-        izz="0.0031033" />
+        izz="0.0131033" />
     </inertial>
     <visual>
       <origin
@@ -141,6 +142,7 @@
       upper="1.48"
       effort="130"
       velocity="30" />
+    <dynamics damping="0.1" friction="0.1" />
   </joint>
   <link
     name="left_hip_yaw_link">
@@ -151,12 +153,12 @@
       <mass
         value="0.9976927" />
       <inertia
-        ixx="0.0085783"
+        ixx="0.0185783"
         ixy="-0.0000067"
         ixz="-0.0002371"
-        iyy="0.0082096"
+        iyy="0.0182096"
         iyz="-0.0000642"
-        izz="0.0023135" />
+        izz="0.0123135" />
     </inertial>
     <visual>
       <origin
@@ -200,6 +202,7 @@
       upper="2.56"
       effort="130"
       velocity="30" />
+    <dynamics damping="0.1" friction="0.1" />
   </joint>
   <link
     name="left_knee_link">
@@ -216,7 +219,7 @@
         ixz="0.0001648"
         iyy="0.0344714"
         iyz="0.0000063"
-        izz="0.0041155" />
+        izz="0.0141155" />
     </inertial>
     <visual>
       <origin
@@ -261,6 +264,7 @@
       upper="2.55"
       effort="130"
       velocity="30" />
+    <dynamics damping="0.1" friction="0.1" />
   </joint>
   <link
     name="left_ankle_pitch_link">
@@ -272,12 +276,12 @@
       <mass
         value="0.2" />
       <inertia
-        ixx="2.9623E-05"
-        ixy="-2.687E-10"
-        ixz="-5.7763E-10"
-        iyy="2.6222E-05"
-        iyz="8.9807E-10"
-        izz="4.3137E-05" />
+        ixx="0.0224795"
+        ixy="0.0000005"
+        ixz="-0.0000005"
+        iyy="0.0227176"
+        iyz="0.0000473"
+        izz="0.0113875" />
     </inertial>
     <visual>
       <origin
@@ -312,6 +316,7 @@
       upper="0.61"
       effort="75"
       velocity="30" />
+    <dynamics damping="0.1" friction="0.1" />
   </joint>
   <link
     name="left_ankle_roll_link">
@@ -325,12 +330,12 @@
       <mass
         value="0.528201582069976" />
       <inertia
-        ixx="0.0124795"
+        ixx="0.0224795"
         ixy="0.0000005"
         ixz="-0.0000005"
-        iyy="0.0127176"
+        iyy="0.0227176"
         iyz="0.0000473"
-        izz="0.0013875" />
+        izz="0.0113875" />
     </inertial>
     <visual>
       <origin
@@ -407,7 +412,7 @@
       upper="0.34"
       effort="75"
       velocity="30" />
-    <dynamics damping="0.01" friction="0.01" />
+    <dynamics damping="0.1" friction="0.1" />
   </joint>
 
   <!-- Right leg -->
@@ -420,12 +425,12 @@
       <mass
         value="0.7656326" />
       <inertia
-        ixx="0.0022636"
+        ixx="0.0122636"
         ixy="-0.0000153"
         ixz="-0.0000266"
-        iyy="0.0022496"
+        iyy="0.0122496"
         iyz="-0.0004700"
-        izz="0.0022883" />
+        izz="0.0122883" />
     </inertial>
     <visual>
       <origin
@@ -459,6 +464,7 @@
       upper="1.57"
       effort="130"
       velocity="30" />
+    <dynamics damping="0.1" friction="0.1" />
   </joint>
   <link
     name="right_hip_roll_link">
@@ -469,12 +475,12 @@
       <mass
         value="2.1934899" />
       <inertia
-        ixx="0.0087195"
+        ixx="0.0187195"
         ixy="-0.0000028"
         ixz="-0.0000196"
-        iyy="0.0080840"
+        iyy="0.0180840"
         iyz="-0.0006364"
-        izz="0.0031028" />
+        izz="0.0131028" />
     </inertial>
     <visual>
       <origin
@@ -518,6 +524,7 @@
       upper="0.5"
       effort="130"
       velocity="30" />
+    <dynamics damping="0.1" friction="0.1" />
   </joint>
   <link
     name="right_hip_yaw_link">
@@ -528,12 +535,12 @@
       <mass
         value="0.9784525" />
       <inertia
-        ixx="0.0085242"
+        ixx="0.0185242"
         ixy="0.0000068"
         ixz="-0.0002486"
-        iyy="0.0081519"
+        iyy="0.0181519"
         iyz="0.0000643"
-        izz="0.0022687" />
+        izz="0.0122687" />
     </inertial>
     <visual>
       <origin
@@ -577,6 +584,7 @@
       upper="2.56"
       effort="130"
       velocity="30" />
+    <dynamics damping="0.1" friction="0.1" />
   </joint>
   <link
     name="right_knee_link">
@@ -593,7 +601,7 @@
         ixz="-0.0000106"
         iyy="0.0356006"
         iyz="0.0000409"
-        izz="0.0041679" />
+        izz="0.0141679" />
     </inertial>
     <visual>
       <origin
@@ -638,6 +646,7 @@
       upper="2.55"
       effort="130"
       velocity="30" />
+    <dynamics damping="0.1" friction="0.1" />
   </joint>
   <link
     name="right_ankle_pitch_link">
@@ -649,12 +658,12 @@
       <mass
         value="0.2" />
       <inertia
-        ixx="2.9623E-05"
-        ixy="-2.687E-10"
-        ixz="5.7763E-10"
-        iyy="2.6222E-05"
-        iyz="-8.9807E-10"
-        izz="4.3137E-05" />
+        ixx="0.0224795"
+        ixy="0.0000005"
+        ixz="-0.0000005"
+        iyy="0.0227176"
+        iyz="0.0000473"
+        izz="0.0113875" />
     </inertial>
     <visual>
       <origin
@@ -689,6 +698,7 @@
       upper="0.61"
       effort="75"
       velocity="30" />
+    <dynamics damping="0.1" friction="0.1" />
   </joint>
   <link
     name="right_ankle_roll_link">
@@ -702,12 +712,12 @@
       <mass
         value="0.528201582069976" />
       <inertia
-        ixx="0.0124795"
+        ixx="0.0224795"
         ixy="0.0000005"
         ixz="-0.0000005"
-        iyy="0.0127176"
+        iyy="0.0227176"
         iyz="0.0000473"
-        izz="0.0013875" />
+        izz="0.0113875" />
     </inertial>
     <visual>
       <origin
@@ -784,7 +794,7 @@
       upper="0.34"
       effort="75"
       velocity="30" />
-    <dynamics damping="0.11" friction="0.11" />
+    <dynamics damping="0.1" friction="0.1" />
   </joint>
 
   <!-- Upper body -->
@@ -843,6 +853,7 @@
       upper="2.13"
       effort="130"
       velocity="30" />
+    <dynamics damping="0.1" friction="0.1" />
   </joint>
 
   <link name="camera_link">
@@ -867,6 +878,7 @@
     <child link="camera_link" />
     <axis xyz="0 1 0" />
     <limit effort="100.0" velocity="100.0" lower="-3.14" upper="3.14"/>
+    <dynamics damping="0.1" friction="0.1" />
   </joint>
 
   <!-- Left arm -->
@@ -879,12 +891,12 @@
       <mass
         value="0.694216136614982" />
       <inertia
-        ixx="0.0005761"
+        ixx="0.0105761"
         ixy="0.0000185"
         ixz="-0.0000038"
-        iyy="0.0006071"
+        iyy="0.0106071"
         iyz="-0.0000024"
-        izz="0.0005178" />
+        izz="0.0105178" />
     </inertial>
     <visual>
       <origin
@@ -918,6 +930,7 @@
       upper="0.79"
       effort="75"
       velocity="30" />
+    <dynamics damping="0.1" friction="0.1" />
   </joint>
   <link
     name="left_shoulder_roll_link">
@@ -928,12 +941,12 @@
       <mass
         value="0.74618333831235" />
       <inertia
-        ixx="0.0005761"
+        ixx="0.0105761"
         ixy="0.0000185"
         ixz="-0.0000038"
-        iyy="0.0006071"
+        iyy="0.0106071"
         iyz="-0.0000024"
-        izz="0.0005178" />
+        izz="0.0105178" />
     </inertial>
     <visual>
       <origin
@@ -967,6 +980,7 @@
       upper="1.9"
       effort="75"
       velocity="30" />
+    <dynamics damping="0.1" friction="0.1" />
   </joint>
   <link
     name="left_shoulder_yaw_link">
@@ -977,12 +991,12 @@
       <mass
         value="0.703549133932797" />
       <inertia
-        ixx="0.0015298"
+        ixx="0.0115298"
         ixy="-0.0000144"
         ixz="0.0000037"
-        iyy="0.0015460"
+        iyy="0.0115460"
         iyz="0.0001661"
-        izz="0.0005342" />
+        izz="0.0105342" />
     </inertial>
     <visual>
       <origin
@@ -1026,6 +1040,7 @@
       upper="2.27"
       effort="75"
       velocity="30" />
+    <dynamics damping="0.1" friction="0.1" />
   </joint>
   <link
     name="left_elbow_pitch_link">
@@ -1036,12 +1051,12 @@
       <mass
         value="0.637811279264698" />
       <inertia
-        ixx="0.0005975"
+        ixx="0.0105975"
         ixy="-0."
         ixz="0."
-        iyy="0.0005157"
+        iyy="0.0105157"
         iyz="0."
-        izz="0.0008168" />
+        izz="0.0108168" />
     </inertial>
     <visual>
       <origin
@@ -1085,6 +1100,7 @@
       upper="0.52"
       effort="75"
       velocity="30" />
+    <dynamics damping="0.1" friction="0.1" />
   </joint>
   <link
     name="left_elbow_yaw_link">
@@ -1095,12 +1111,12 @@
       <mass
         value="0.354680930251576" />
       <inertia
-        ixx="0.0011202"
+        ixx="0.0111202"
         ixy="0."
         ixz="0."
-        iyy="0.0011323"
+        iyy="0.0111323"
         iyz="0."
-        izz="0.0003334" />
+        izz="0.0103334" />
     </inertial>
     <visual>
       <origin
@@ -1134,6 +1150,7 @@
       upper="2.62"
       effort="75"
       velocity="30" />
+    <dynamics damping="0.1" friction="0.1" />
   </joint>
 
   <!-- Right arm -->
@@ -1146,12 +1163,12 @@
       <mass
         value="0.681332877125899" />
       <inertia
-        ixx="0.0005761"
+        ixx="0.0105761"
         ixy="-0.0000185"
         ixz="-0.0000038"
-        iyy="0.0006071"
+        iyy="0.0106071"
         iyz="-0.0000024"
-        izz="0.0005178" />
+        izz="0.0105178" />
     </inertial>
     <visual>
       <origin
@@ -1186,6 +1203,7 @@
       upper="0.79"
       effort="75"
       velocity="30" />
+    <dynamics damping="0.1" friction="0.1" />
   </joint>
   <link
     name="right_shoulder_roll_link">
@@ -1196,12 +1214,12 @@
       <mass
         value="0.740046506400838" />
       <inertia
-        ixx="0.0005761"
+        ixx="0.0105761"
         ixy="0.0000185"
         ixz="-0.0000038"
-        iyy="0.0006071"
+        iyy="0.0106071"
         iyz="-0.0000024"
-        izz="0.0005178" />
+        izz="0.0105178" />
     </inertial>
     <visual>
       <origin
@@ -1238,6 +1256,7 @@
       upper="0.19"
       effort="75"
       velocity="30" />
+    <dynamics damping="0.1" friction="0.1" />
   </joint>
   <link
     name="right_shoulder_yaw_link">
@@ -1248,12 +1267,12 @@
       <mass
         value="0.697149409567736" />
       <inertia
-        ixx="0.0015298"
+        ixx="0.0115298"
         ixy="0.0000144"
         ixz="0.0000037"
-        iyy="0.0015460"
+        iyy="0.0115460"
         iyz="-0.0001661"
-        izz="0.0005342" />
+        izz="0.0105342" />
     </inertial>
     <visual>
       <origin
@@ -1297,6 +1316,7 @@
       upper="2.27"
       effort="75"
       velocity="30" />
+    <dynamics damping="0.1" friction="0.1" />
   </joint>
   <link
     name="right_elbow_pitch_link">
@@ -1307,12 +1327,12 @@
       <mass
         value="0.630885670588017" />
       <inertia
-        ixx="0.0005975"
+        ixx="0.0105975"
         ixy="0."
         ixz="0."
-        iyy="0.0005157"
+        iyy="0.0105157"
         iyz="-0."
-        izz="0.0008168" />
+        izz="0.0108168" />
     </inertial>
     <visual>
       <origin
@@ -1359,6 +1379,7 @@
       upper="0.52"
       effort="75"
       velocity="30" />
+    <dynamics damping="0.1" friction="0.1" />
   </joint>
   <link
     name="right_elbow_yaw_link">
@@ -1369,12 +1390,12 @@
       <mass
         value="0.345282077013092" />
       <inertia
-        ixx="0.0011202"
+        ixx="0.0111202"
         ixy="-0."
         ixz="0."
-        iyy="0.0011323"
+        iyy="0.0111323"
         iyz="-0."
-        izz="0.0003334" />
+        izz="0.0103334" />
     </inertial>
     <visual>
       <origin
@@ -1411,6 +1432,7 @@
       upper="2.62"
       effort="75"
       velocity="30" />
+    <dynamics damping="0.1" friction="0.1" />
   </joint>
 
   <!-- Head -->
