@@ -58,5 +58,7 @@
             mode="torque" p_gain='30' d_gain='1' i_gain='0'/>
 
     <device id="24" type="GzImu" name="imu"/>
+    <device id="26" type="GzDepthCamera" name="depth_camera" debug="true"/>
+
   </bus>
 </bitbot>
