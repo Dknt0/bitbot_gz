@@ -1,9 +1,4 @@
 # bitbot-gz
 
-Dependencies:
+Bitbot instance for Gazebo simulation.
 
-You guess )
-
-Usage:
-
-You guess again )

@@ -1,6 +1,7 @@
 #ifndef GZ_BUS_H
 #define GZ_BUS_H
 
+#include "bitbot_gz/device/gz_depth_camera.hpp"
 #include "bitbot_gz/device/gz_device.hpp"
 #include "bitbot_gz/device/gz_imu.h"
 #include "bitbot_gz/device/gz_joint.h"

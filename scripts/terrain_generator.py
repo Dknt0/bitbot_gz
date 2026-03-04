@@ -288,5 +288,7 @@ if __name__ == "__main__":
 
     Gap(tg)
     Stairs(tg)
+    tg.AddBox(position=[20.0, 0.0, 0.0], euler=[0.0, 0.0, 0.0], size=[1.0, 20.0, 5])
+    tg.AddBox(position=[0.0, -10.0, 0.0], euler=[0.0, 0.0, 0.0], size=[20.0, 1.0, 5])
 
     tg.Save()

@@ -39,6 +39,7 @@ find_package(grid_map_ros REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(nav_msgs REQUIRED)
 find_package(tf2_ros REQUIRED)
+find_package(OpenCV REQUIRED)
 include_directories("/usr/include/eigen3")
 
 find_package(gz-sim8 REQUIRED)
@@ -65,6 +66,7 @@ ament_target_dependencies(bitbot_gz
   sensor_msgs
   rosgraph_msgs
   ament_index_cpp
+  OpenCV
 )
 target_link_libraries(bitbot_gz BitbotKernel)
 

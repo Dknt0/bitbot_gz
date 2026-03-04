@@ -13,6 +13,7 @@ enum class GzDeviceType : uint32_t {
   GZ_IMU,
   GZ_POSITION,
   GZ_LINVEL,
+  GZ_DEPTH_CAMERA,
 };
 
 class GzDevice : public Device {

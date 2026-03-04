@@ -2,12 +2,12 @@
 #define GZ_NODE_HPP
 
 #include <map>
-
-#include "rclcpp/rclcpp.hpp"
-#include "rosgraph_msgs/msg/clock.hpp"
-#include "sensor_msgs/msg/imu.hpp"
-#include "sensor_msgs/msg/joint_state.hpp"
-#include "std_msgs/msg/float64_multi_array.hpp"
+#include <rclcpp/rclcpp.hpp>
+#include <rosgraph_msgs/msg/clock.hpp>
+#include <sensor_msgs/msg/image.hpp>
+#include <sensor_msgs/msg/imu.hpp>
+#include <sensor_msgs/msg/joint_state.hpp>
+#include <std_msgs/msg/float64_multi_array.hpp>
 
 namespace bitbot {
 
@@ -43,6 +43,13 @@ class RosInterface : public rclcpp::Node {
           std::lock_guard<std::mutex> lock(this->data_lock_);
           this->imu_msg_ = msg;
         });
+    depth_image_sub_ = this->create_subscription<sensor_msgs::msg::Image>(
+        "/depth_camera/image_raw", 10,
+        [this](const sensor_msgs::msg::Image::SharedPtr msg) {
+          std::lock_guard<std::mutex> lock(this->data_lock_);
+          this->depth_image_msg_ = msg;
+          depth_ready_ = true;
+        });
     clock_subscriber_ = this->create_subscription<rosgraph_msgs::msg::Clock>(
         "/clock", 10, [this](const rosgraph_msgs::msg::Clock::SharedPtr msg) {
           this->clock_count_++;
@@ -70,9 +77,24 @@ class RosInterface : public rclcpp::Node {
     return joint_command_msg_;
   }
 
+  sensor_msgs::msg::Image::SharedPtr GetDepthImage() {
+    std::lock_guard<std::mutex> lock(data_lock_);
+    depth_ready_ = false;
+    return depth_image_msg_;
+  }
+
   sensor_msgs::msg::Imu::SharedPtr GetImuData() {
     std::lock_guard<std::mutex> lock(data_lock_);
     return imu_msg_;
+  }
+
+  bool IsDepthReady() {
+    std::lock_guard<std::mutex> lock(data_lock_);
+    if (depth_ready_) {
+      depth_ready_ = false;
+      return true;
+    }
+    return false;
   }
 
   bool IsClockReady() {
@@ -123,6 +145,7 @@ class RosInterface : public rclcpp::Node {
       joint_state_subscriber_;
   rclcpp::Subscription<sensor_msgs::msg::Imu>::SharedPtr imu_subscriber_;
   rclcpp::Subscription<rosgraph_msgs::msg::Clock>::SharedPtr clock_subscriber_;
+  rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr depth_image_sub_;
 
   size_t clock_count_ = 0;
 
@@ -130,6 +153,8 @@ class RosInterface : public rclcpp::Node {
   sensor_msgs::msg::JointState::SharedPtr joint_state_msg_;
   std_msgs::msg::Float64MultiArray joint_command_msg_;
   sensor_msgs::msg::Imu::SharedPtr imu_msg_;
+  sensor_msgs::msg::Image::SharedPtr depth_image_msg_;
+  bool depth_ready_ = false;
   std::atomic_bool timer_ready_;
 
   std::atomic_bool joint_map_ready_;

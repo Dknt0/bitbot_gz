@@ -15,6 +15,8 @@ void GzBus::doRegisterDevices() {
       (uint32_t)GzDeviceType::GZ_JOINT, "GzJoint");
   static DeviceRegistrar<GzDevice, GzImu> gz_imu((uint32_t)GzDeviceType::GZ_IMU,
                                                  "GzImu");
+  static DeviceRegistrar<GzDevice, GzDepthCamera> gz_depth_camera(
+      (uint32_t)GzDeviceType::GZ_DEPTH_CAMERA, "GzDepthCamera");
 }
 
 void GzBus::WriteBus() {

@@ -18,9 +18,9 @@ def generate_launch_description():
                 [
                     FindPackageShare("bitbot_gz"),
                     "urdf",
-                    "hhfc",
+                    "efc",
                     "urdf",
-                    "hhfc.urdf",
+                    "efc.urdf",
                 ]
             ),
         ]
@@ -31,7 +31,7 @@ def generate_launch_description():
         [
             FindPackageShare("bitbot_gz"),
             "rviz",
-            "hhfc.rviz",
+            "efc.rviz",
         ]
     )
 

@@ -10,10 +10,10 @@
 #include <memory>
 
 #include "controller/init_pos.hpp"
-#include "controller/policy_controller.hpp"
-#include "robot/hhfc_gz/hhfc_gz_common.h"
-#include "robot/hhfc_gz/robot_hhfc_gz.hpp"
-using RobotT = ovinf::RobotHhfcGz;
+#include "ovinf/controller/policy_controller_factory.hpp"
+#include "ovinf/robot/efc_gz_common.h"
+#include "ovinf/robot/robot_efc_gz.hpp"
+using RobotT = ovinf::RobotEfcGz;
 
 enum Events {
   InitPose = 1001,
@@ -61,11 +61,13 @@ class MakeBitbotEverywhere {
         robot_, config["RobotConfig"]["init_pos"]);
 
     // Policy net
-    standing_controller_ = std::make_shared<ovinf::PolicyController>(
-        robot_, config["RobotConfig"]["policy_standing"]);
-    walking_controller_ = std::make_shared<ovinf::PolicyController>(
-        robot_, config["RobotConfig"]["policy_perceptive"]);
-    robust_controller_ = std::make_shared<ovinf::PolicyController>(
+    standing_controller_ =
+        ovinf::PolicyControllerFactory::CreatePolicyController(
+            robot_, config["RobotConfig"]["policy_standing"]);
+    walking_controller_ =
+        ovinf::PolicyControllerFactory::CreatePolicyController(
+            robot_, config["RobotConfig"]["policy_walking"]);
+    robust_controller_ = ovinf::PolicyControllerFactory::CreatePolicyController(
         robot_, config["RobotConfig"]["policy_robust"]);
     current_policy_controller_ = standing_controller_;
     target_policy_controller_ = standing_controller_;
@@ -322,11 +324,11 @@ class MakeBitbotEverywhere {
   RobotT::Ptr robot_;
   ovinf::InitPosController::Ptr init_pos_controller_;
 
-  ovinf::PolicyController::Ptr standing_controller_ = nullptr;
-  ovinf::PolicyController::Ptr walking_controller_ = nullptr;
-  ovinf::PolicyController::Ptr robust_controller_ = nullptr;
-  ovinf::PolicyController::Ptr current_policy_controller_ = nullptr;
-  ovinf::PolicyController::Ptr target_policy_controller_ = nullptr;
+  ovinf::PolicyControllerBase::Ptr standing_controller_ = nullptr;
+  ovinf::PolicyControllerBase::Ptr walking_controller_ = nullptr;
+  ovinf::PolicyControllerBase::Ptr robust_controller_ = nullptr;
+  ovinf::PolicyControllerBase::Ptr current_policy_controller_ = nullptr;
+  ovinf::PolicyControllerBase::Ptr target_policy_controller_ = nullptr;
 
   bool switching_flag_ = false;
   double switching_time_;
