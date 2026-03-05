@@ -16,8 +16,8 @@ GzDepthCamera::~GzDepthCamera() {}
 
 void GzDepthCamera::Input(const RosInterface::Ptr ros_interface) {
   if (!ros_interface->IsDepthReady()) {
-    RCLCPP_WARN(rclcpp::get_logger("hs"),
-                "Depth image not ready. Skipping this update.");
+    // RCLCPP_WARN(rclcpp::get_logger("hs"),
+    //             "Depth image not ready. Skipping this update.");
     return;
   }
 
@@ -26,12 +26,15 @@ void GzDepthCamera::Input(const RosInterface::Ptr ros_interface) {
                      this_time - last_update_time_)
                      .count() /
                  1000.0;
+  last_update_time_ = this_time;
 
   cv_bridge::CvImagePtr cv_ptr;
   try {
     cv_ptr = cv_bridge::toCvCopy(ros_interface->GetDepthImage(),
                                  sensor_msgs::image_encodings::TYPE_32FC1);
-    frequency_ = 1.0 / elapsed;
+    counter_++;
+    frequency_ =
+        frequency_ * (counter_ - 1) / counter_ + (1.0 / elapsed) / counter_;
   } catch (cv_bridge::Exception& e) {
     RCLCPP_ERROR(rclcpp::get_logger("hs"), "cv_bridge exception: %s", e.what());
 
