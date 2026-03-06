@@ -24,7 +24,7 @@ class GzDepthCamera final : public GzDevice {
 
  private:
   cv::Mat depth_image_;
-  bool debug_ = false;
+  bool debug_vis_ = false;
   double frequency_ = 0.0;
   uint counter_ = 0;
   std::chrono::steady_clock::time_point last_update_time_;

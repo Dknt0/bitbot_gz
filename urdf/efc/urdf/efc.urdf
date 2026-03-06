@@ -1785,17 +1785,17 @@
       <update_rate>60</update_rate>
       <camera name='depth_camera'>
         <pose>0 0 0 0 0 0</pose>
-        <horizontal_fov>1.047</horizontal_fov>
+        <horizontal_fov>1.5632</horizontal_fov>
         <image>
-          <width>640</width>
-          <height>480</height>
+          <width>64</width>
+          <height>32</height>
           <format>R_FLOAT32</format>
           <!-- <format>L_INT16</format> -->
           <anti_aliasing>4</anti_aliasing>
         </image>
         <clip>
-          <near>0.5</near>
-          <far>10</far>
+          <near>0.01</near>
+          <far>10.0</far>
         </clip>
         <noise>
           <type>none</type>
