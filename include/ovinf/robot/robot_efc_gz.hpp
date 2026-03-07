@@ -53,6 +53,11 @@ class RobotEfcGz : public RobotBase<float> {
       }
     }
 
+    virtual VectorT const& Depth() const override {
+      auto robot_gz = dynamic_cast<RobotEfcGz*>(robot_);
+      return robot_gz->depth_camera_->GetDepthObs();
+    }
+
     virtual bool Update() final {
       auto robot_gz = dynamic_cast<RobotEfcGz*>(robot_);
 
@@ -205,6 +210,8 @@ class RobotEfcGz : public RobotBase<float> {
  private:
   std::vector<MotorPtr> motors_ = {};
   ImuPtr imu_;
+  DepthCameraPtr depth_camera_;
+
   Kernel::ExtraData* extra_data_;
   // std::vector<AnklePtr> ankles_;
 };
@@ -215,6 +222,7 @@ void RobotEfcGz::GetDevice(const KernelBus& bus) {
   }
 
   imu_ = bus.GetDevice<ImuDevice>(motor_size_).value();
+  depth_camera_ = bus.GetDevice<DepthCameraDevice>(motor_size_ + 1).value();
 }
 
 void RobotEfcGz::ObserverEfcGz::CreateLog(YAML::Node const& config) {

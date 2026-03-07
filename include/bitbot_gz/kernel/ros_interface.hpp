@@ -88,6 +88,13 @@ class RosInterface : public rclcpp::Node {
     return imu_msg_;
   }
 
+  void PoweroffMotors() {
+    for (size_t i = 0; i < joint_command_msg_.data.size(); ++i) {
+      joint_command_msg_.data[i] = 0.0;
+    }
+    joint_command_publisher_->publish(joint_command_msg_);
+  }
+
   bool IsDepthReady() {
     std::lock_guard<std::mutex> lock(data_lock_);
     if (depth_ready_) {

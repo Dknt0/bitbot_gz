@@ -35,6 +35,8 @@ void GzDepthCamera::Input(const RosInterface::Ptr ros_interface) {
     counter_++;
     frequency_ =
         frequency_ * (counter_ - 1) / counter_ + (1.0 / elapsed) / counter_;
+    width_ = cv_ptr->image.cols;
+    height_ = cv_ptr->image.rows;
 
     // TODO: Add method None image checking
     // TODO: Add the processing pipeline in config file.
@@ -72,7 +74,9 @@ void GzDepthCamera::Input(const RosInterface::Ptr ros_interface) {
     normalized = (clipped - min_depth) / (max_depth - min_depth);
 
     // Store processed result
-    depth_image_ = normalized;
+    depth_obs_.resize(normalized.rows * normalized.cols);
+    std::memcpy(depth_obs_.data(), normalized.data,
+                depth_obs_.size() * sizeof(float));
 
   } catch (cv_bridge::Exception& e) {
     RCLCPP_ERROR(rclcpp::get_logger("hs"), "cv_bridge exception: %s", e.what());
@@ -82,7 +86,8 @@ void GzDepthCamera::Input(const RosInterface::Ptr ros_interface) {
 
   if (debug_vis_) {
     // Visualization for arbitrary image size, scale by max (Python style)
-    cv::Mat vis_image = depth_image_.clone();
+    cv::Mat vis_image(18, 32, CV_32F, depth_obs_.data());
+
     double minVal, maxVal;
     cv::minMaxLoc(vis_image, &minVal, &maxVal);
     cv::Mat img8u;
@@ -109,8 +114,8 @@ void GzDepthCamera::Output(const RosInterface::Ptr ros_interface) {}
 void GzDepthCamera::UpdateModel(const RosInterface::Ptr ros_interface) {}
 
 void GzDepthCamera::UpdateRuntimeData() {
-  monitor_data_[0] = depth_image_.cols;
-  monitor_data_[1] = depth_image_.rows;
+  monitor_data_[0] = width_;
+  monitor_data_[1] = height_;
   monitor_data_[2] = frequency_;
 }
 

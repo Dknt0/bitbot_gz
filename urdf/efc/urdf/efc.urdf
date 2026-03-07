@@ -1446,12 +1446,12 @@
       <mass
         value="0.9238" />
       <inertia
-        ixx="0.00439"
+        ixx="0.01439"
         ixy="3E-05"
         ixz="-0.00032"
-        iyy="0.00486"
+        iyy="0.01486"
         iyz="1E-05"
-        izz="0.00393" />
+        izz="0.01393" />
     </inertial>
     <visual>
       <origin
@@ -1485,6 +1485,7 @@
       upper="1.5"
       effort="36"
       velocity="30" />
+    <dynamics damping="0.1" friction="0.1" />
   </joint>
 
   <!-- ros_control -->
@@ -1788,7 +1789,7 @@
         <horizontal_fov>1.5632</horizontal_fov>
         <image>
           <width>64</width>
-          <height>32</height>
+          <height>36</height>
           <format>R_FLOAT32</format>
           <!-- <format>L_INT16</format> -->
           <anti_aliasing>4</anti_aliasing>

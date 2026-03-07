@@ -67,6 +67,7 @@ class GzKernel
 
       this->KernelPrivateLoopEndTask();
     }
+    this->ros_interface_->PoweroffMotors();
   }
 
  private:

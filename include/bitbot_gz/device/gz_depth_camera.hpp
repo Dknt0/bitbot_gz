@@ -1,6 +1,7 @@
 #ifndef GZ_DEPTH_CAMERA_HPP
 #define GZ_DEPTH_CAMERA_HPP
 
+#include <Eigen/Core>
 #include <chrono>
 #include <cv_bridge/cv_bridge.hpp>
 #include <opencv2/core.hpp>
@@ -16,6 +17,10 @@ class GzDepthCamera final : public GzDevice {
   GzDepthCamera(const pugi::xml_node& device_node);
   ~GzDepthCamera();
 
+  Eigen::Vector<float, Eigen::Dynamic> const& GetDepthObs() const {
+    return depth_obs_;
+  }
+
  private:
   virtual void Input(const RosInterface::Ptr ros_interface) final;
   virtual void Output(const RosInterface::Ptr ros_interface) final;
@@ -23,10 +28,13 @@ class GzDepthCamera final : public GzDevice {
   virtual void UpdateRuntimeData() final;
 
  private:
-  cv::Mat depth_image_;
+  // cv::Mat depth_image_;
+  Eigen::Vector<float, Eigen::Dynamic> depth_obs_;
   bool debug_vis_ = false;
   double frequency_ = 0.0;
   uint counter_ = 0;
+  uint width_ = 0;
+  uint height_ = 0;
   std::chrono::steady_clock::time_point last_update_time_;
 };
 

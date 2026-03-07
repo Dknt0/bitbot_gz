@@ -1,6 +1,7 @@
 #ifndef EFC_GZ_COMMON_HPP
 #define EFC_GZ_COMMON_HPP
 
+#include "bitbot_gz/device/gz_depth_camera.hpp"
 #include "bitbot_gz/device/gz_imu.h"
 #include "bitbot_gz/device/gz_joint.h"
 #include "bitbot_gz/kernel/gz_kernel.hpp"
@@ -78,6 +79,8 @@ using ImuDevice = bitbot::GzImu;
 using ImuPtr = ImuDevice*;
 using MotorDevice = bitbot::GzJoint;
 using MotorPtr = MotorDevice*;
+using DepthCameraDevice = bitbot::GzDepthCamera;
+using DepthCameraPtr = DepthCameraDevice*;
 
 struct UserData {};
 
