@@ -874,7 +874,8 @@
   </link>
   <joint name="camera_joint" type="fixed">
     <!-- <origin xyz="0.0907988662332928 0.01 0.0" rpy="-2.181661564992912 0.0 -1.57079632679489661923" /> -->
-    <origin xyz="0.0907988662332928 0.01 0.0" rpy="-2.181661564992912 0.0 -1.57079632679489661923" />
+    <!-- <origin xyz="0.0907988662332928 0.01 0.0" rpy="-2.4 0.0 -1.57079632679489661923" /> -->
+    <origin xyz="0.0907988662332928 0.01 0.0" rpy="-0.00530447 0.83774397 0.01191416" />
     <parent link="waist_link" />
     <child link="camera_link" />
     <axis xyz="0 1 0" />
@@ -1780,13 +1781,15 @@
   <!-- RGBD camera plugin -->
   <gazebo reference="camera_link">
     <sensor name='depth_camera_sensor' type='depth_camera'>
-      <pose>0 0 0 1.57079632679489661923 -1.57079632679489661923 0</pose>
+      <!-- <pose>0 0 0 1.57079632679489661923 -1.57079632679489661923 0</pose> -->
+      <pose>0 0 0 0.0 0.0 0</pose>
       <topic>/depth_camera/image_raw</topic>
       <camera_info_topic>/depth_camera/camera_info</camera_info_topic>
       <update_rate>60</update_rate>
       <camera name='depth_camera'>
         <pose>0 0 0 0 0 0</pose>
         <horizontal_fov>1.5632</horizontal_fov>
+        <!-- <horizontal_fov>1.047</horizontal_fov> -->
         <image>
           <width>64</width>
           <height>36</height>
@@ -1795,7 +1798,7 @@
           <anti_aliasing>4</anti_aliasing>
         </image>
         <clip>
-          <near>0.01</near>
+          <near>0.1</near>
           <far>10.0</far>
         </clip>
         <noise>

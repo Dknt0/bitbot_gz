@@ -59,6 +59,5 @@
 
     <device id="24" type="GzImu" name="imu"/>
     <device id="25" type="GzDepthCamera" name="depth_camera" debug_vis="true"/>
-
   </bus>
 </bitbot>
