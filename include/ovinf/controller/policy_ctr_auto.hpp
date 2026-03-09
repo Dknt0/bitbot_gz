@@ -47,12 +47,15 @@ class PolicyCtrAuto : public PolicyControllerBase {
             robot_->Observer()->JointActualVelocity()[policy_joint_idx_map_[i]];
       }
 
-      inference_net_->WarmUp({.command = command_,
-                              .ang_vel = robot_->Observer()->AngularVelocity(),
-                              .proj_gravity = robot_->Observer()->ProjGravity(),
-                              .joint_pos = pos_input,
-                              .joint_vel = vel_input,
-                              .euler_angles = robot_->Observer()->EulerRpy()});
+      inference_net_->WarmUp({
+          .command = command_,
+          .ang_vel = robot_->Observer()->AngularVelocity(),
+          .proj_gravity = robot_->Observer()->ProjGravity(),
+          .joint_pos = pos_input,
+          .joint_vel = vel_input,
+          .euler_angles = robot_->Observer()->EulerRpy(),
+          .scan = robot_->Observer()->Depth(),
+      });
     }
     policy_target_position_ = robot_->Executor()->JointTargetPosition();
     // target_pos_filter_->Filter(policy_target_position_);
@@ -83,13 +86,15 @@ class PolicyCtrAuto : public PolicyControllerBase {
             robot_->Observer()->JointActualVelocity()[policy_joint_idx_map_[i]];
       }
 
-      auto err = inference_net_->InferUnsync(
-          {.command = command_,
-           .ang_vel = robot_->Observer()->AngularVelocity(),
-           .proj_gravity = robot_->Observer()->ProjGravity(),
-           .joint_pos = pos_input,
-           .joint_vel = vel_input,
-           .euler_angles = robot_->Observer()->EulerRpy()});
+      auto err = inference_net_->InferUnsync({
+          .command = command_,
+          .ang_vel = robot_->Observer()->AngularVelocity(),
+          .proj_gravity = robot_->Observer()->ProjGravity(),
+          .joint_pos = pos_input,
+          .joint_vel = vel_input,
+          .euler_angles = robot_->Observer()->EulerRpy(),
+          .scan = robot_->Observer()->Depth(),
+      });
     }
 
     if (set_target) {
