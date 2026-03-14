@@ -422,16 +422,16 @@ RobotConfig:
       r_ankle_p: 30
       r_ankle_r: 30
       waist_y: 100
-      l_shoulder_p: 30
-      l_shoulder_r: 20
-      l_shoulder_y: 10
-      l_elbow_p: 10
-      l_elbow_y: 10
-      r_shoulder_p: 30
-      r_shoulder_r: 20
-      r_shoulder_y: 10
-      r_elbow_p: 10
-      r_elbow_y: 10
+      l_shoulder_p: 50
+      l_shoulder_r: 50
+      l_shoulder_y: 50
+      l_elbow_p: 50
+      l_elbow_y: 50
+      r_shoulder_p: 50
+      r_shoulder_r: 50
+      r_shoulder_y: 50
+      r_elbow_p: 50
+      r_elbow_y: 50
       head_y: 30
     d_gains:
       l_hip_p: 3.0
@@ -469,7 +469,8 @@ RobotConfig:
       control_period: 0.02
       # TODO
       # model_path: "/home/dknt/Project/bitbot_gz_ws/src/bitbot_gz/checkpoint/efc/theta_3d_v43.onnx"
-      model_path: "/home/dknt/Project/bitbot_gz_ws/src/bitbot_gz/checkpoint/efc/encoder_actor_critic.onnx"
+      # model_path: "/home/dknt/Project/bitbot_gz_ws/src/bitbot_gz/checkpoint/efc/encoder_actor_critic.onnx"
+      model_path: "/home/dknt/Project/bitbot_gz_ws/src/bitbot_gz/checkpoint/efc/amp_parkour_v4.onnx"
       obs_buffer_size: 8
 
       log_data: true
@@ -481,8 +482,8 @@ RobotConfig:
       action_size: 21
       action_scale: 0.25
       obs_scales:
-        ang_vel: 1.0
-        lin_vel: 2.0
+        ang_vel: 0.25
+        lin_vel: 1.0
         command: 1.0
         dof_pos: 1.0
         dof_vel: 0.05

@@ -865,7 +865,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <box size="0.1 0.02 0.02"/>
+        <box size="0.02 0.1 0.02"/>
       </geometry>
       <material name="">
         <color rgba="0.0 0.0 1.0 0.7" />
@@ -873,9 +873,8 @@
     </visual>
   </link>
   <joint name="camera_joint" type="fixed">
-    <!-- <origin xyz="0.0907988662332928 0.01 0.0" rpy="-2.181661564992912 0.0 -1.57079632679489661923" /> -->
-    <!-- <origin xyz="0.0907988662332928 0.01 0.0" rpy="-2.4 0.0 -1.57079632679489661923" /> -->
     <origin xyz="0.0907988662332928 0.01 0.0" rpy="-0.00530447 0.83774397 0.01191416" />
+    <!-- <origin xyz="0.081 -0.047 0.019" rpy="0.0 0.6108652382 0.0" /> -->
     <parent link="waist_link" />
     <child link="camera_link" />
     <axis xyz="0 1 0" />
