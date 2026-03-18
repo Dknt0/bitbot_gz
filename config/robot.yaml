@@ -467,10 +467,10 @@ RobotConfig:
       policy_type: "Hike"
       use_absolute_clock: true
       control_period: 0.02
-      # TODO
-      # model_path: "/home/dknt/Project/bitbot_gz_ws/src/bitbot_gz/checkpoint/efc/theta_3d_v43.onnx"
+      # TODO:
       # model_path: "/home/dknt/Project/bitbot_gz_ws/src/bitbot_gz/checkpoint/efc/encoder_actor_critic.onnx"
-      model_path: "/home/dknt/Project/bitbot_gz_ws/src/bitbot_gz/checkpoint/efc/amp_parkour_v4.onnx"
+      model_path: "/home/dknt/Project/bitbot_gz_ws/src/bitbot_gz/checkpoint/efc/amp_parkour_v8.onnx"
+      # model_path: "/home/dknt/Project/bitbot_gz_ws/src/bitbot_gz/checkpoint/efc/parkour_test3.onnx"
       obs_buffer_size: 8
 
       log_data: true
