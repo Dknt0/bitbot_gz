@@ -44,7 +44,7 @@ void GzDepthCamera::Input(const RosInterface::Ptr ros_interface) {
     // Depth image processing
     // 1. Remap gazebo far-clipped (0) pixels to max depth=2.5 (for sim2sim)
     cv::Mat img = cv_ptr->image.clone();
-    float min_depth = 0.1f;
+    float min_depth = 0.0f;
     float max_depth = 2.5f;
     // Set all pixels with 0 (invalid/far clip) to max_depth
     for (int y = 0; y < img.rows; ++y) {
@@ -88,8 +88,8 @@ void GzDepthCamera::Input(const RosInterface::Ptr ros_interface) {
     // Visualization for arbitrary image size, scale by max (Python style)
     cv::Mat vis_image(18, 32, CV_32F, depth_obs_.data());
 
-    double minVal, maxVal;
-    cv::minMaxLoc(vis_image, &minVal, &maxVal);
+    double minVal = 0.0, maxVal = 1.0;
+    // cv::minMaxLoc(vis_image, &minVal, &maxVal);
     cv::Mat img8u;
     if (maxVal < 1e-6) {
       // Avoid divide by zero if all zero
