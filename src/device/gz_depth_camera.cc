@@ -51,6 +51,9 @@ void GzDepthCamera::Input(const RosInterface::Ptr ros_interface) {
       float* row_ptr = img.ptr<float>(y);
       for (int x = 0; x < img.cols; ++x) {
         if (row_ptr[x] == 0.0f) row_ptr[x] = max_depth;
+        // row_ptr[x] += 0.1;
+        // row_ptr[x] += 0.05;
+        // row_ptr[x] += 0.05;
       }
     }
 

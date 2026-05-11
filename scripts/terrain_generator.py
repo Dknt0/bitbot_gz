@@ -229,10 +229,14 @@ def Slope(tg: TerrainGenerator):
 
 
 def Stairs(tg: TerrainGenerator, init_pos=np.array([1.0, 2.0, 0.0])):
-    height = 0.2
-    width = 0.3
+    # height = 0.2
+    height = 0.15
+    width = 0.30
+    # width = 0.28
+
     # height = 0.15
-    # width = 0.2
+    # width = 0.25
+
     stair_nums = 8
     platform_length = 1.0
 
@@ -273,13 +277,23 @@ def Gap(tg: TerrainGenerator, init_pos=np.array([1.0, -3.0, 0.0])):
     bias_x = 3.0
     platform_l = 1.0
     gap_size = [0.6, 0.6, 0.6, 0.6]
-    height = 0.4
+    # height = 0.4
+    height = 0.3
+    slope_angle = 0.12  # radians (~7 deg)
+    slope_width = 2.0
+    slope_thickness = 0.005
 
-    slope_pos = init_pos + np.array([bias_x - 2.46 / 2, 0.0, height / 2])
+    # Auto-compute slope geometry so it exactly connects ground to platform top
+    slope_length = height / np.sin(slope_angle)
+    slope_horiz = slope_length * np.cos(slope_angle)
+    # Right edge of slope meets left edge of first platform at x = bias_x
+    slope_x_center = bias_x - slope_horiz / 2
+
+    slope_pos = init_pos + np.array([slope_x_center, 0.0, height / 2])
     tg.AddBox(
         position=slope_pos.tolist(),
-        euler=[0.0, -0.16, 0.0],
-        size=[2.51, 2.0, 0.005],
+        euler=[0.0, -slope_angle, 0.0],
+        size=[slope_length, slope_width, slope_thickness],
     )
 
     box_pos = init_pos + np.array([bias_x + platform_l / 2.0, 0.0, height / 2])
@@ -306,6 +320,7 @@ if __name__ == "__main__":
     tg.AddBox(position=[20.0, 0.0, 0.0], euler=[0.0, 0.0, 0.0], size=[1.0, 20.0, 5])
     tg.AddBox(position=[0.0, -10.0, 0.0], euler=[0.0, 0.0, 0.0], size=[20.0, 1.0, 5])
 
-    tg.AddBox(position=[2.0, 7.0, 0.0], euler=[0.0, 0.0, 0.0], size=[2.0, 3.0, 0.8])
+    tg.AddBox(position=[2.0, 7.0, 0.0], euler=[0.0, 0.0, 0.0], size=[2.0, 3.0, 0.80])
+    # tg.AddBox(position=[2.0, 7.0, 0.0], euler=[0.0, 0.0, 0.0], size=[2.0, 3.0, 0.6])
 
     tg.Save()

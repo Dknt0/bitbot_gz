@@ -351,48 +351,48 @@
           rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
       </material>
     </visual>
-      <collision>
-          <origin xyz="0.013 -0.039 -0.032" rpy="0 -1.5708 0"/>
-          <geometry>
-              <cylinder radius="0.01" length="0.16"/>
-          </geometry>
-      </collision>
-      <collision>
-          <origin xyz="0.015 -0.026 -0.032" rpy="0 -1.5708 0"/>
-          <geometry>
-              <cylinder radius="0.01" length="0.205"/>
-          </geometry>
-      </collision>
-      <collision>
-          <origin xyz="0.015 -0.013 -0.032" rpy="0 -1.5708 0"/>
-          <geometry>
-              <cylinder radius="0.01" length="0.205"/>
-          </geometry>
-      </collision>
-      <collision>
-          <origin xyz="0.015 0 -0.032" rpy="0 -1.5708 0"/>
-          <geometry>
-              <cylinder radius="0.01" length="0.205"/>
-          </geometry>
-      </collision>
-      <collision>
-          <origin xyz="0.015 0.013 -0.032" rpy="0 -1.5708 0"/>
-          <geometry>
-              <cylinder radius="0.01" length="0.205"/>
-          </geometry>
-      </collision>
-      <collision>
-          <origin xyz="0.015 0.026 -0.032" rpy="0 -1.5708 0"/>
-          <geometry>
-              <cylinder radius="0.01" length="0.205"/>
-          </geometry>
-      </collision>
-      <collision>
-          <origin xyz="0.013 0.039 -0.032" rpy="0 -1.5708 0"/>
-          <geometry>
-              <cylinder radius="0.01" length="0.16"/>
-          </geometry>
-      </collision>
+    <collision>
+        <origin xyz="0.013 -0.039 -0.032" rpy="0 -1.5708 0"/>
+        <geometry>
+            <cylinder radius="0.01" length="0.16"/>
+        </geometry>
+    </collision>
+    <collision>
+        <origin xyz="0.015 -0.026 -0.032" rpy="0 -1.5708 0"/>
+        <geometry>
+            <cylinder radius="0.01" length="0.205"/>
+        </geometry>
+    </collision>
+    <collision>
+        <origin xyz="0.015 -0.013 -0.032" rpy="0 -1.5708 0"/>
+        <geometry>
+            <cylinder radius="0.01" length="0.205"/>
+        </geometry>
+    </collision>
+    <collision>
+        <origin xyz="0.015 0 -0.032" rpy="0 -1.5708 0"/>
+        <geometry>
+            <cylinder radius="0.01" length="0.205"/>
+        </geometry>
+    </collision>
+    <collision>
+        <origin xyz="0.015 0.013 -0.032" rpy="0 -1.5708 0"/>
+        <geometry>
+            <cylinder radius="0.01" length="0.205"/>
+        </geometry>
+    </collision>
+    <collision>
+        <origin xyz="0.015 0.026 -0.032" rpy="0 -1.5708 0"/>
+        <geometry>
+            <cylinder radius="0.01" length="0.205"/>
+        </geometry>
+    </collision>
+    <collision>
+        <origin xyz="0.013 0.039 -0.032" rpy="0 -1.5708 0"/>
+        <geometry>
+            <cylinder radius="0.01" length="0.16"/>
+        </geometry>
+    </collision>
   </link>
   <joint
     name="left_ankle_roll_joint"
@@ -874,7 +874,10 @@
   </link>
   <joint name="camera_joint" type="fixed">
     <!-- <origin xyz="0.0907988662332928 0.01 0.0" rpy="-0.00530447 0.83774397 0.01191416" /> -->
-    <origin xyz="0.081 -0.047 0.019" rpy="0.0 0.6108652382 0.0" />
+    <!-- <origin xyz="0.121 -0.047 0.209" rpy="0.0 0.8726646259971648 0.0" /> -->
+    <!-- <origin xyz="0.081 -0.047 0.019" rpy="0.0 0.6108652382 0.0" /> -->
+    <origin xyz="0.12623021 0.0475 0.22489942" rpy="0.0 0.8726646259971648 0.0" />
+    <!-- <origin xyz="0.081 -0.047 0.019" rpy="0.0 0.9599310885968813 0.0" /> -->
     <parent link="waist_link" />
     <child link="camera_link" />
     <axis xyz="0 1 0" />
@@ -1787,7 +1790,9 @@
       <update_rate>60</update_rate>
       <camera name='depth_camera'>
         <pose>0 0 0 0 0 0</pose>
-        <horizontal_fov>1.5632</horizontal_fov>
+        <!-- <horizontal_fov>1.5632</horizontal_fov> -->
+        <horizontal_fov>1.5882496193148399</horizontal_fov>
+        <!-- <horizontal_fov>1.2032</horizontal_fov> -->
         <!-- <horizontal_fov>1.047</horizontal_fov> -->
         <image>
           <width>64</width>
@@ -1797,13 +1802,16 @@
           <anti_aliasing>4</anti_aliasing>
         </image>
         <clip>
-          <near>0.1</near>
+          <near>0.05</near>
           <far>10.0</far>
         </clip>
         <noise>
-          <type>none</type>
+          <!-- <type>none</type> -->
+          <!-- <mean>0</mean> -->
+          <!-- <stddev>0</stddev> -->
+          <type>gaussian</type>
           <mean>0</mean>
-          <stddev>0</stddev>
+          <stddev>0.01</stddev>
         </noise>
         <distortion>
           <k1>0</k1>

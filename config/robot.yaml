@@ -464,21 +464,33 @@ RobotConfig:
 
     inference:
       # policy_type: "Epsilon"
-      policy_type: "Hike"
-      use_absolute_clock: true
+      # policy_type: "Hike"
+      policy_type: "HikeClock"
+      use_absolute_clock: false
       control_period: 0.02
+      cycle_time: 0.9
       # TODO:
-      # model_path: "/home/dknt/Project/bitbot_gz_ws/src/bitbot_gz/checkpoint/efc/encoder_actor_critic.onnx"
-      model_path: "/home/dknt/Project/bitbot_gz_ws/src/bitbot_gz/checkpoint/efc/amp_parkour_v8.onnx"
+      model_path: "/home/dknt/Project/bitbot_gz_ws/src/bitbot_gz/checkpoint/efc/encoder_actor_critic.onnx"
+      # model_path: "/home/dknt/Project/bitbot_gz_ws/src/bitbot_gz/checkpoint/efc/parkour_stair_noised.onnx"
+      # model_path: "/home/dknt/Project/bitbot_gz_ws/src/bitbot_gz/checkpoint/efc/parkour_stair_v31.onnx"
+      # model_path: "/home/dknt/Project/bitbot_gz_ws/src/bitbot_gz/checkpoint/efc/parkour_noised.onnx"
+      # model_path: "/home/dknt/Project/bitbot_gz_ws/src/bitbot_gz/checkpoint/efc/amp_parkour_v8.onnx"
       # model_path: "/home/dknt/Project/bitbot_gz_ws/src/bitbot_gz/checkpoint/efc/parkour_test3.onnx"
       obs_buffer_size: 8
+      num_images: 8
+      # image_skip: 5
+      image_skip: 10
+      # image_skip: 15
+      # image_skip: 0
+      image_width: 32
+      image_height: 18
 
       log_data: true
       log_dir: "/home/dknt/Project/bitbot_gz_ws/src/bitbot_gz/log/policy"
       log_name: "walking"
 
       device: "CPU"
-      single_obs_size: 72
+      single_obs_size: 74
       action_size: 21
       action_scale: 0.25
       obs_scales:
@@ -532,6 +544,8 @@ RobotConfig:
         r_shoulder_y: 0
         l_ankle_p: -0.25
         r_ankle_p: -0.25
+        # l_ankle_p: -0.28
+        # r_ankle_p: -0.28
         l_elbow_p: -0.8
         r_elbow_p: -0.8
         l_ankle_r: 0
