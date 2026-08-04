@@ -236,8 +236,10 @@ def Stairs(tg: TerrainGenerator, init_pos=np.array([1.0, 2.0, 0.0])):
 
     # height = 0.15
     # width = 0.25
+    # length = 1.5
+    length = 4.5
 
-    stair_nums = 8
+    stair_nums = 10
     platform_length = 1.0
 
     init_pos_up = init_pos + np.array([0.0, 0.0, 0.0])
@@ -250,7 +252,7 @@ def Stairs(tg: TerrainGenerator, init_pos=np.array([1.0, 2.0, 0.0])):
         yaw=0.0,
         width=width,
         height=height,
-        length=4.0,
+        length=length,
         stair_nums=stair_nums,
     )
     tg.AddBox(
@@ -260,7 +262,7 @@ def Stairs(tg: TerrainGenerator, init_pos=np.array([1.0, 2.0, 0.0])):
             height * stair_nums + init_pos[2] - 0.05,
         ],
         euler=[0.0, 0.0, 0.0],
-        size=[platform_length, 4.0, 0.1],
+        size=[platform_length, length, 0.1],
     )
 
     tg.AddStairs(
@@ -268,7 +270,7 @@ def Stairs(tg: TerrainGenerator, init_pos=np.array([1.0, 2.0, 0.0])):
         yaw=3.14,
         width=width,
         height=height,
-        length=4.0,
+        length=length,
         stair_nums=stair_nums,
     )
 
@@ -320,7 +322,7 @@ if __name__ == "__main__":
     tg.AddBox(position=[20.0, 0.0, 0.0], euler=[0.0, 0.0, 0.0], size=[1.0, 20.0, 5])
     tg.AddBox(position=[0.0, -10.0, 0.0], euler=[0.0, 0.0, 0.0], size=[20.0, 1.0, 5])
 
-    tg.AddBox(position=[2.0, 7.0, 0.0], euler=[0.0, 0.0, 0.0], size=[2.0, 3.0, 0.80])
+    tg.AddBox(position=[2.0, 7.0, 0.0], euler=[0.0, 0.0, 0.0], size=[2.0, 3.0, 0.6])
     # tg.AddBox(position=[2.0, 7.0, 0.0], euler=[0.0, 0.0, 0.0], size=[2.0, 3.0, 0.6])
 
     tg.Save()

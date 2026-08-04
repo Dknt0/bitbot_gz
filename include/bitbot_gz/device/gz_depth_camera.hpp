@@ -4,8 +4,9 @@
 #include <Eigen/Core>
 #include <chrono>
 #include <cv_bridge/cv_bridge.hpp>
-#include <opencv2/core.hpp>
-#include <opencv2/highgui.hpp>
+// #include <opencv2/core.hpp>
+// #include <opencv2/highgui.hpp>
+#include <opencv2/opencv.hpp>
 #include <sensor_msgs/msg/image.hpp>
 
 #include "bitbot_gz/device/gz_device.hpp"

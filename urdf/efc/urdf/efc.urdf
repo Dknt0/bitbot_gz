@@ -180,7 +180,7 @@
         rpy="0 0 0" />
       <geometry>
         <cylinder
-          radius="0.052"
+          radius="0.062"
           length="0.2" />
       </geometry>
     </collision>
@@ -237,11 +237,11 @@
     </visual>
     <collision>
       <origin
-        xyz="0 0 -0.17"
+        xyz="0.02 0 -0.17"
         rpy="0 0 0" />
       <geometry>
         <cylinder
-          radius="0.052"
+          radius="0.055"
           length="0.26" />
       </geometry>
     </collision>
@@ -619,11 +619,11 @@
     </visual>
     <collision>
       <origin
-        xyz="0 0 -0.17"
+        xyz="0.02 0 -0.17"
         rpy="0 0 0" />
       <geometry>
         <cylinder
-          radius="0.052"
+          radius="0.055"
           length="0.26" />
       </geometry>
     </collision>
@@ -801,8 +801,11 @@
   <link
     name="waist_link">
     <inertial>
+      <!-- <origin -->
+      <!--   xyz="0.0050879 4.5814E-05 0.16257" -->
+      <!--   rpy="0 0 0" /> -->
       <origin
-        xyz="0.0050879 4.5814E-05 0.16257"
+        xyz="-0.0450879 4.5814E-05 0.16257"
         rpy="0 0 0" />
       <mass
         value="18.55068" />
@@ -876,7 +879,15 @@
     <!-- <origin xyz="0.0907988662332928 0.01 0.0" rpy="-0.00530447 0.83774397 0.01191416" /> -->
     <!-- <origin xyz="0.121 -0.047 0.209" rpy="0.0 0.8726646259971648 0.0" /> -->
     <!-- <origin xyz="0.081 -0.047 0.019" rpy="0.0 0.6108652382 0.0" /> -->
-    <origin xyz="0.12623021 0.0475 0.22489942" rpy="0.0 0.8726646259971648 0.0" />
+    <!-- <origin xyz="0.12380269 -0.0475 0.22030226" rpy="0.0 1.0471975511965976 0.0" /> -->
+
+    <origin xyz="0.12380269 -0.0475 0.22030226" rpy="0.0 0.8726646259971648 0.0" />
+    <!-- <origin xyz="0.12540641 -0.0475      0.20431743" rpy="0.0 1.1344640137963142 0.0" /> -->
+    <!-- <origin xyz="0.12040641 -0.0475      0.19431743" rpy="0.0 1.1344640137963142 0.0" /> -->
+
+    <!-- <origin xyz="0.12540641 -0.0475      0.20431743" rpy="0.0 1.1344640137963142 0.0" /> -->
+
+    <!-- <origin xyz="0.12380269 -0.0475 0.22030226" rpy="0.0 1.1693705988362009 0.0" /> -->
     <!-- <origin xyz="0.081 -0.047 0.019" rpy="0.0 0.9599310885968813 0.0" /> -->
     <parent link="waist_link" />
     <child link="camera_link" />
@@ -1790,8 +1801,8 @@
       <update_rate>60</update_rate>
       <camera name='depth_camera'>
         <pose>0 0 0 0 0 0</pose>
-        <!-- <horizontal_fov>1.5632</horizontal_fov> -->
-        <horizontal_fov>1.5882496193148399</horizontal_fov>
+        <horizontal_fov>1.5632</horizontal_fov>
+        <!-- <horizontal_fov>1.5882496193148399</horizontal_fov> -->
         <!-- <horizontal_fov>1.2032</horizontal_fov> -->
         <!-- <horizontal_fov>1.047</horizontal_fov> -->
         <image>

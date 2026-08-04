@@ -59,6 +59,7 @@ void GzDepthCamera::Input(const RosInterface::Ptr ros_interface) {
 
     // 2. Crop image. Regions: top=18 px, bottom=-0 px, left=16 px, right=-16 px
     int crop_top = 18, crop_bottom = 0, crop_left = 16, crop_right = 16;
+    // int crop_top = 17, crop_bottom = 1, crop_left = 17, crop_right = 15;
     // int crop_top = 0, crop_bottom = 0, crop_left = 0, crop_right = 0;
     cv::Rect roi(crop_left, crop_top, img.cols - crop_left - crop_right,
                  img.rows - crop_top - crop_bottom);
@@ -68,6 +69,9 @@ void GzDepthCamera::Input(const RosInterface::Ptr ros_interface) {
     cv::Mat blurred;
     cv::GaussianBlur(cropped, blurred, cv::Size(3, 3), 1.0, 1.0,
                      cv::BORDER_REFLECT);
+    // cv::GaussianBlur(blurred, blurred, cv::Size(3, 3), 1.0, 1.0,
+    //                  cv::BORDER_REFLECT);
+    // blurred = cropped.clone();
 
     // 4. Normalize blurred depth to [0, 1]
     cv::Mat normalized;
