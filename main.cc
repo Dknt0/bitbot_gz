@@ -7,8 +7,8 @@ int main(int argc, char** argv) {
 
   std::string config_path =
       ament_index_cpp::get_package_share_directory("bitbot_gz");
-  MakeBitbotEverywhere everyone(config_path + "/config/efc_gz.xml",
-                                config_path + "/config/robot.yaml");
+  MakeBitbotEverywhere everyone(config_path + "/config/dex_gz.xml",
+                                config_path + "/config/robot_dex.yaml");
   everyone.WillMake();
   everyone.BeMaking();
   everyone.HaveMade();

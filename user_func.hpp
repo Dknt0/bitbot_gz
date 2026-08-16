@@ -11,9 +11,9 @@
 
 #include "controller/init_pos.hpp"
 #include "ovinf/controller/policy_controller_factory.hpp"
-#include "ovinf/robot/efc_gz_common.h"
-#include "ovinf/robot/robot_efc_gz.hpp"
-using RobotT = ovinf::RobotEfcGz;
+#include "ovinf/robot/dex_gz_common.h"
+#include "ovinf/robot/robot_dex_gz.hpp"
+using RobotT = ovinf::RobotDexGz;
 
 enum Events {
   InitPose = 1001,

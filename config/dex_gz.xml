@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bitbot>
+  <logger path="/home/dknt/Project/bitbot_gz_ws/log/" level="info"/>
+  <backend port="12888" settings_file="./backend.json"/>
+  <bus>
+    <!-- Device id order MUST match joint order in config/robot_dex.yaml -->
+
+    <device id="0" type="GzJoint" name="hip_pitch_l_joint"
+            mode="torque" p_gain='100' d_gain='10' i_gain='0'/>
+    <device id="1" type="GzJoint" name="hip_roll_l_joint"
+            mode="torque" p_gain='100' d_gain='10' i_gain='0'/>
+    <device id="2" type="GzJoint" name="hip_yaw_l_joint"
+            mode="torque" p_gain='100' d_gain='10' i_gain='0'/>
+    <device id="3" type="GzJoint" name="knee_pitch_l_joint"
+            mode="torque" p_gain='100' d_gain='10' i_gain='0'/>
+    <device id="4" type="GzJoint" name="ankle_pitch_l_joint"
+            mode="torque" p_gain='100' d_gain='10' i_gain='0'/>
+    <device id="5" type="GzJoint" name="ankle_roll_l_joint"
+            mode="torque" p_gain='100' d_gain='10' i_gain='0'/>
+
+    <device id="6" type="GzJoint" name="hip_pitch_r_joint"
+            mode="torque" p_gain='100' d_gain='10' i_gain='0'/>
+    <device id="7" type="GzJoint" name="hip_roll_r_joint"
+            mode="torque" p_gain='100' d_gain='10' i_gain='0'/>
+    <device id="8" type="GzJoint" name="hip_yaw_r_joint"
+            mode="torque" p_gain='100' d_gain='10' i_gain='0'/>
+    <device id="9" type="GzJoint" name="knee_pitch_r_joint"
+            mode="torque" p_gain='100' d_gain='10' i_gain='0'/>
+    <device id="10" type="GzJoint" name="ankle_pitch_r_joint"
+            mode="torque" p_gain='100' d_gain='10' i_gain='0'/>
+    <device id="11" type="GzJoint" name="ankle_roll_r_joint"
+            mode="torque" p_gain='100' d_gain='10' i_gain='0'/>
+
+    <device id="12" type="GzJoint" name="waist_yaw_joint"
+            mode="torque" p_gain='30' d_gain='1' i_gain='0'/>
+    <device id="13" type="GzJoint" name="waist_roll_joint"
+            mode="torque" p_gain='30' d_gain='1' i_gain='0'/>
+    <device id="14" type="GzJoint" name="waist_pitch_joint"
+            mode="torque" p_gain='30' d_gain='1' i_gain='0'/>
+
+    <device id="15" type="GzJoint" name="shoulder_pitch_l_joint"
+            mode="torque" p_gain='30' d_gain='1' i_gain='0'/>
+    <device id="16" type="GzJoint" name="shoulder_roll_l_joint"
+            mode="torque" p_gain='30' d_gain='1' i_gain='0'/>
+    <device id="17" type="GzJoint" name="shoulder_yaw_l_joint"
+            mode="torque" p_gain='30' d_gain='1' i_gain='0'/>
+    <device id="18" type="GzJoint" name="elbow_pitch_l_joint"
+            mode="torque" p_gain='30' d_gain='1' i_gain='0'/>
+    <device id="19" type="GzJoint" name="elbow_yaw_l_joint"
+            mode="torque" p_gain='30' d_gain='1' i_gain='0'/>
+    <device id="20" type="GzJoint" name="wrist_pitch_l_joint"
+            mode="torque" p_gain='30' d_gain='1' i_gain='0'/>
+    <device id="21" type="GzJoint" name="wrist_roll_l_joint"
+            mode="torque" p_gain='30' d_gain='1' i_gain='0'/>
+
+    <device id="22" type="GzJoint" name="shoulder_pitch_r_joint"
+            mode="torque" p_gain='30' d_gain='1' i_gain='0'/>
+    <device id="23" type="GzJoint" name="shoulder_roll_r_joint"
+            mode="torque" p_gain='30' d_gain='1' i_gain='0'/>
+    <device id="24" type="GzJoint" name="shoulder_yaw_r_joint"
+            mode="torque" p_gain='30' d_gain='1' i_gain='0'/>
+    <device id="25" type="GzJoint" name="elbow_pitch_r_joint"
+            mode="torque" p_gain='30' d_gain='1' i_gain='0'/>
+    <device id="26" type="GzJoint" name="elbow_yaw_r_joint"
+            mode="torque" p_gain='30' d_gain='1' i_gain='0'/>
+    <device id="27" type="GzJoint" name="wrist_pitch_r_joint"
+            mode="torque" p_gain='30' d_gain='1' i_gain='0'/>
+    <device id="28" type="GzJoint" name="wrist_roll_r_joint"
+            mode="torque" p_gain='30' d_gain='1' i_gain='0'/>
+
+    <device id="29" type="GzImu" name="imu"/>
+    <device id="30" type="GzDepthCamera" name="depth_camera" debug_vis="false"/>
+  </bus>
+</bitbot>
