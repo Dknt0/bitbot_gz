@@ -371,7 +371,7 @@ RobotConfig:
         - "waist_y"
         - "waist_r"
         - "waist_p"
-      policy_default_position:
+      policy_default_position: &standing_policy_pos
         l_hip_p: -0.25
         l_hip_r: 0
         l_hip_y: 0
@@ -563,61 +563,34 @@ RobotConfig:
         r_shoulder_y: 0
         r_elbow_p: -0.3
 
+  # Same configuration as policy_standing (placeholder until a dedicated
+  # robust policy is trained); kept so the robust policy slot stays usable.
   policy_robust:
     controller_type: "AUTO"
+    num_delay: 0
     p_gains: *default_p_gains
-    d_gains:
-      l_hip_p: 1.5
-      l_hip_r: 1.5
-      l_hip_y: 1.5
-      l_knee: 1.5
-      l_ankle_p: 1.0
-      l_ankle_r: 1.0
-      r_hip_p: 1.5
-      r_hip_r: 1.5
-      r_hip_y: 1.5
-      r_knee: 1.5
-      r_ankle_p: 1.0
-      r_ankle_r: 1.0
-      waist_y: 2.0
-      waist_r: 2.0
-      waist_p: 2.0
-      l_shoulder_p: 1.0
-      l_shoulder_r: 1.0
-      l_shoulder_y: 1.0
-      l_elbow_p: 1.0
-      l_elbow_y: 1.0
-      l_wrist_p: 1.0
-      l_wrist_r: 1.0
-      r_shoulder_p: 1.0
-      r_shoulder_r: 1.0
-      r_shoulder_y: 1.0
-      r_elbow_p: 1.0
-      r_elbow_y: 1.0
-      r_wrist_p: 1.0
-      r_wrist_r: 1.0
+    d_gains: *default_d_gains
     default_position: *defult_init_pos
     decimation: 10
     target_pos_filter: *default_target_pos_filter
 
     inference:
-      policy_type: "Locomotion"
-      use_absolute_clock: true
+      policy_type: "HumanoidStand"
+      use_absolute_clock: false
       control_period: 0.01
-      model_path: "/home/dknt/Project/bitbot_gz_ws/src/bitbot_gz/checkpoint/efc/theta_3d_v43.onnx"
+      stand_threshold: 0.045
+      cycle_time: 0.9
+      model_path: "/home/dknt/Project/bitbot_gz_ws/src/bitbot_gz/checkpoint/dex/policy_msl.onnx"
       obs_buffer_size: 15
-      cycle_time: 0.8
-      phase_offset_left: 0.38
-      phase_offset_right: 0.88
 
       log_data: true
       log_dir: "/home/dknt/Project/bitbot_gz_ws/src/bitbot_gz/log/policy"
       log_name: "robust"
 
       device: "CPU"
-      single_obs_size: 50
-      action_size: 13
-      action_scale: 0.5 #  0.25
+      single_obs_size: 56
+      action_size: 15
+      action_scale: 0.25
       obs_scales:
         ang_vel: 1.0
         lin_vel: 2.0
@@ -626,34 +599,8 @@ RobotConfig:
         dof_vel: 0.05
         proj_gravity: 1.0
       clip_action: 18.0
-      realtime: true
-      stick_to_core: 7
+      realtime: false
+      stick_to_core: 5
 
-      policy_joint_names:
-        - "l_hip_p"
-        - "l_hip_r"
-        - "l_hip_y"
-        - "l_knee"
-        - "l_ankle_p"
-        - "l_ankle_r"
-        - "r_hip_p"
-        - "r_hip_r"
-        - "r_hip_y"
-        - "r_knee"
-        - "r_ankle_p"
-        - "r_ankle_r"
-        - "waist_y"
-      policy_default_position:
-        l_hip_p: -0.25
-        l_hip_r: 0
-        l_hip_y: 0
-        l_knee: 0.5
-        l_ankle_p: -0.25
-        l_ankle_r: 0
-        r_hip_p: -0.25
-        r_hip_r: 0
-        r_hip_y: 0
-        r_knee: 0.5
-        r_ankle_p: -0.25
-        r_ankle_r: 0
-        waist_y: 0
+      policy_joint_names: *policy_all_joints
+      policy_default_position: *standing_policy_pos
