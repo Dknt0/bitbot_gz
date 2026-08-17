@@ -18,9 +18,9 @@ def generate_launch_description():
                 [
                     FindPackageShare("bitbot_gz"),
                     "urdf",
-                    "efc",
+                    "dex",
                     "urdf",
-                    "efc.urdf",
+                    "tiangong2dex_29dof.urdf",
                 ]
             ),
         ]
@@ -31,7 +31,7 @@ def generate_launch_description():
         [
             FindPackageShare("bitbot_gz"),
             "rviz",
-            "efc.rviz",
+            "dex.rviz",
         ]
     )
 

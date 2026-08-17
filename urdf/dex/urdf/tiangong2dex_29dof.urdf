@@ -602,7 +602,10 @@
       <mass value="0.1" />
       <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01" />
     </inertial>
-    <visual>
+    <!-- Visual disabled: the housing mesh pokes ~9cm forward below the camera
+         origin and blocks the lower depth/color frustum (near-clip black band).
+         Training never renders it (raycaster targets ground + leg links only). -->
+    <!-- <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
         <mesh filename="package://bitbot_gz/urdf/dex/meshes_new/camera_body_front_link.STL" />
@@ -610,7 +613,7 @@
       <material name="">
         <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
       </material>
-    </visual>
+    </visual> -->
     <!-- <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
@@ -619,7 +622,10 @@
     </collision> -->
   </link>
   <joint name="camera_body_front_joint" type="fixed">
-    <origin xyz="0.092709 -0.02375 0.039976" rpy="2.5307 0 1.5708" />
+    <!-- gz depth_camera looks along +X; positive Y-pitch tilts the view down.
+         55 deg matches the training extrinsics (quat 0.88701 0 0.46175 0),
+         same mounting convention as the efc camera (rpy 0 0.8727 0). -->
+    <origin xyz="0.092709 -0.02375 0.039976" rpy="0 0.959934 0" />
     <parent link="waist_pitch_link" />
     <child link="camera_body_front_link" />
     <axis xyz="0 0 0" />
@@ -647,7 +653,8 @@
     </collision> -->
   </link>
   <joint name="imu_waist_joint" type="fixed">
-    <origin xyz="-0.081641 -0.00010952 -0.063057" rpy="-3.1416 0 -1.5695" />
+    <!-- <origin xyz="-0.081641 -0.00010952 -0.063057" rpy="-3.1416 0 -1.5695" /> -->
+    <origin xyz="-0.081641 -0.00010952 -0.063057" rpy="0 0 0" />
     <parent link="pelvis" />
     <child link="imu_waist_link" />
     <axis xyz="0 0 0" />
@@ -1657,7 +1664,8 @@
       </camera>
     </sensor>
     <sensor name='color_camera_sensor' type='camera'>
-      <pose>0 0 0 1.57079632679489661923 -1.57079632679489661923 0</pose>
+      <!-- Same orientation as the depth camera: look along link +X -->
+      <pose>0 0 0 0 0 0</pose>
       <topic>/color_camera/image_raw</topic>
       <camera_info_topic>/color_camera/camera_info</camera_info_topic>
       <update_rate>20</update_rate>
@@ -1698,7 +1706,7 @@
   <gazebo>
     <plugin filename="RobotResetPlugin" name="gz::sim::systems::RobotResetPlugin">
       <robot_name>dex</robot_name>
-      <reset_height>0.95</reset_height>
+      <reset_height>1.05</reset_height>
     </plugin>
   </gazebo>
 

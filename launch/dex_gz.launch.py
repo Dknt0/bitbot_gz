@@ -13,6 +13,7 @@ from launch.substitutions import (
     LaunchConfiguration,
 )
 from launch_ros.actions import Node
+from launch_ros.parameter_descriptions import ParameterValue
 from launch_ros.substitutions import FindPackageShare
 from ament_index_python.packages import get_package_share_directory
 
@@ -88,7 +89,7 @@ def generate_launch_description():
             "-y",
             "0.0",
             "-z",
-            "0.99",
+            "1.05",
             "-Y",
             "0.0",
             "-R",
@@ -113,7 +114,11 @@ def generate_launch_description():
             ),
         ]
     )
-    robot_description = {"robot_description": robot_description_file}
+    # value_type=str: the URDF contains XML comments with ": " which would
+    # otherwise break launch_ros' YAML evaluation of the parameter
+    robot_description = {
+        "robot_description": ParameterValue(robot_description_file, value_type=str)
+    }
 
     robot_controllers_config = PathJoinSubstitution(
         [
