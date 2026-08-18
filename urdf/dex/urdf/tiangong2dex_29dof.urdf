@@ -626,6 +626,7 @@
          55 deg matches the training extrinsics (quat 0.88701 0 0.46175 0),
          same mounting convention as the efc camera (rpy 0 0.8727 0). -->
     <origin xyz="0.092709 -0.02375 0.039976" rpy="0 0.959934 0" />
+    <!-- <origin xyz="0.092709 -0.07125 0.039976" rpy="0 0.959934 0" /> -->
     <parent link="waist_pitch_link" />
     <child link="camera_body_front_link" />
     <axis xyz="0 0 0" />
@@ -1628,7 +1629,11 @@
   <!-- RGBD camera plugin -->
   <gazebo reference="camera_body_front_link">
     <sensor name='depth_camera_sensor' type='depth_camera'>
-      <pose>0 0 0 0.0 0.0 0</pose>
+      <!-- Shift from the housing (link) frame to the left-IR optical center,
+           matching the training extrinsics pos (0.092709, -0.07125, 0.039976)
+           in waist_pitch_link frame: y offset -0.07125 - (-0.02375) = -0.0475.
+           Link frame is pitched about Y, so the y axis is unchanged. -->
+      <pose>0 0.0 0 0 0 0</pose>
       <topic>/depth_camera/image_raw</topic>
       <camera_info_topic>/depth_camera/camera_info</camera_info_topic>
       <update_rate>60</update_rate>
